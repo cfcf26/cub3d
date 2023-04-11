@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_printf.c                                      :+:      :+:    :+:   */
+/*   models.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 12:00:28 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 21:52:44 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/11 22:04:31 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-#ifdef DEBUG_MODE
-
-void	test_printf(char *str)
+typedef struct s_info
 {
-	printf("%s\n", str);
-}
-#endif
+	char	*no; // ./textures/path_to_the_north_texture
+	char	*so;
+	char	*we;
+	char	*ea;
+	int		floor[3];
+	int		ceiling[3];
+	char	**map;
+}	t_info;
 
-#ifndef DEBUG_MODE
-
-void	test_printf(char *str)
-{
-	(void)str;
-}
-#endif

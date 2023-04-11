@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:54:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 11:42:23 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/11 22:04:31 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	validate_floor_ceiling_colors(int fd)
 
 	flag = 0;
 	line = pass_newline(fd);
-	printf("line: %s\n", line);
 	while (flag != 3)
 	{
 		if (line && line[0] != '\n')
