@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 11:00:38 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/11 22:20:29 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	*pass_newline(int fd)
 		if (line[0] != '\n')
 			break ;
 		free(line);
+		line = get_next_line(fd);
 	}
 	if (!line)
 		write_err("Error : Wrong texture path (2)\n");
