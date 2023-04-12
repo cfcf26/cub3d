@@ -10,16 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#ifndef MODELS_H
+# define MODELS_H
+# include "utils.h"
 
 typedef struct s_info
 {
+	char	*file_name;
 	char	*no; // ./textures/path_to_the_north_texture
 	char	*so;
 	char	*we;
 	char	*ea;
 	int		floor[3];
 	int		ceiling[3];
+	int		height;
+	int		width;
 	char	**map;
 }	t_info;
 
+#endif
