@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass_newline.c                                     :+:      :+:    :+:   */
+/*   get_info.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 22:20:29 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/13 01:58:59 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/13 02:19:31 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-char	*pass_newline(int fd)
+t_info	*get_info(void)
 {
-	char	*line;
+	static t_info	*info = NULL;
 
-	line = get_next_line(fd);
-	while (line)
+	if (info == NULL)
 	{
-		if (line[0] != '\n')
-			break ;
-		free(line);
-		line = get_next_line(fd);
+		info = ft_calloc(1, sizeof(t_info));
+		return (info);
 	}
-	if (!line)
-		write_err("Error : Memory allocation failed (pass_newline)\n");
-	return (line);
+	else
+		return (info);
 }

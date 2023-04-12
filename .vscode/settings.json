@@ -6,6 +6,21 @@
         "fcntl.h": "c",
         "cub3d.h": "c",
         "parser.h": "c",
-        "utils.h": "c"
+        "utils.h": "c",
+        "bitset": "c",
+        "locale": "c",
+        "__hash_table": "c",
+        "__split_buffer": "c",
+        "array": "c",
+        "initializer_list": "c",
+        "string": "c",
+        "string_view": "c",
+        "unordered_map": "c",
+        "vector": "c",
+        "ios": "c",
+        "stdio.h": "c",
+        "boolean.h": "c",
+        "models.h": "c",
+        "sstream": "c"
     }
 }

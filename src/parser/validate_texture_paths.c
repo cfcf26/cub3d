@@ -12,7 +12,7 @@
 
 #include "parser.h"
 
-static void	validate_paths(char *line)
+static void	validate_texture_file(char *line)
 {
 	int			open_f;
 	const int	len = ft_strlen(line);
@@ -22,7 +22,6 @@ static void	validate_paths(char *line)
 	if (open_f == -1)
 		write_err("Error : Texture file open failed (1)\n");
 	close(open_f);
-	free(line);
 }
 
 void	validate_texture_paths(int fd)
@@ -44,8 +43,9 @@ void	validate_texture_paths(int fd)
 			flag |= 8;
 		else
 			write_err("Error : Wrong texture path (1)\n");
-		validate_paths(ft_strdup(line + 3));
+		validate_texture_file(line + 3);
 		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 }

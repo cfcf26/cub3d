@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass_newline.c                                     :+:      :+:    :+:   */
+/*   pass_not_newline.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 22:20:29 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/13 01:59:08 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/13 01:59:09 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-char	*pass_newline(int fd)
+char	*pass_not_newline(int fd)
 {
 	char	*line;
 
 	line = get_next_line(fd);
 	while (line)
 	{
-		if (line[0] != '\n')
+		if (line[0] == '\n')
 			break ;
 		free(line);
 		line = get_next_line(fd);
 	}
 	if (!line)
-		write_err("Error : Memory allocation failed (pass_newline)\n");
+		write_err("Error : Memory allocation failed (pass_not_newline)\n");
 	return (line);
 }

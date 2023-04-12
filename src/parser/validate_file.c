@@ -23,14 +23,14 @@ static void	validate_file_extension(char *file_name)
 		write_err("Error : Wrong file extension (1)\n");
 }
 
-static int	validate_file_open(char *file_name)
+static void	validate_file_open(char *file_name)
 {
 	int	fd;
 
 	fd = open(file_name, O_RDONLY);
 	if (fd == -1)
 		write_err("Error : File open failed (1)\n");
-	return (fd);
+	close(fd);
 }
 
 static void	validate_arguments(int ac)
@@ -39,9 +39,9 @@ static void	validate_arguments(int ac)
 		write_err("Error : Wrong number of arguments (1)\n");
 }
 
-int	validate_file(int ac, char **av)
+void	validate_file(int ac, char **av)
 {
 	validate_arguments(ac);
 	validate_file_extension(av[1]);
-	return (validate_file_open(av[1]));
+	validate_file_open(av[1]);
 }

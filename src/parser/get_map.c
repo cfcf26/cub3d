@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass_newline.c                                     :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 22:20:29 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/13 02:03:13 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/13 02:04:55 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "parser.h"
 
-char	*pass_newline(int fd)
+void	get_map(int fd)
 {
 	char	*line;
+	char	**map;
+	int		i;
 
-	line = get_next_line(fd);
-	while (line)
+	line = pass_newline(fd);
+	map = ft_calloc(get_info()->height + 1, sizeof(char *));
+	i = -1;
+	while (++i < get_info()->height)
 	{
-		if (line[0] != '\n')
-			break ;
-		free(line);
+		line[get_info()->width[i] - 1] = '\0';
+		map[i] = line;
 		line = get_next_line(fd);
 	}
-	if (!line)
-		write_err("Error : Memory allocation failed (pass_newline)\n");
-	return (line);
+	map[i] = NULL;
+	get_info()->map = map;
 }

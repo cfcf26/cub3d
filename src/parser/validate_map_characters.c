@@ -14,9 +14,7 @@
 
 void	validate_map_characters(int fd)
 {
-	const char	set[10] = "012NSEW \n";
 	char		*line;
-	char		*player;
 	int			player_count;
 	int			i;
 
@@ -29,14 +27,16 @@ void	validate_map_characters(int fd)
 		i = -1;
 		while (line[++i])
 		{
-			player = ft_strchr(set, line[i]);
-			if (!player && player_count > 1)
-				write_err("Error : Wrong character in map (1)\n");
-			if (player[0] == 'N' || player[0] == 'S' \
-			|| player[0] == 'E' || player[0] == 'W')
+			if (!(ft_strchr(VALID_MAP_CHAR, line[i])) && player_count > 1)
+				write_err("Error : Too many players (1)\n");
+			if (line[i] == 'N' || line[i] == 'S' \
+			|| line[i] == 'E' || line[i] == 'W')
 				player_count++;
 		}
 		free(line);
 		line = get_next_line(fd);
 	}
+	if (player_count != 1)
+		write_err("Error : No player (1)\n");
+	free(line);
 }

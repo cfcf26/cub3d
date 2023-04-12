@@ -17,14 +17,14 @@
 typedef struct s_info
 {
 	char	*file_name;
-	char	*no; // ./textures/path_to_the_north_texture
+	char	*no;
 	char	*so;
 	char	*we;
 	char	*ea;
 	int		floor[3];
 	int		ceiling[3];
 	int		height;
-	int		width;
+	int		*width;
 	char	**map;
 }	t_info;
 

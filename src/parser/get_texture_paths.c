@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass_newline.c                                     :+:      :+:    :+:   */
+/*   get_texture_paths.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 22:20:29 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/13 02:01:25 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/13 02:01:58 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "parser.h"
 
-char	*pass_newline(int fd)
+void	get_texture_paths(int fd)
 {
 	char	*line;
+	int		i;
 
-	line = get_next_line(fd);
-	while (line)
+	i = -1;
+	while (++i < 4)
 	{
-		if (line[0] != '\n')
-			break ;
+		line = pass_newline(fd);
+		line[ft_strlen(line) - 1] = '\0';
+		if (line[0] == 'N')
+			get_info()->no = ft_strdup(line + 3);
+		else if (line[0] == 'S')
+			get_info()->so = ft_strdup(line + 3);
+		else if (line[0] == 'W')
+			get_info()->we = ft_strdup(line + 3);
+		else if (line[0] == 'E')
+			get_info()->ea = ft_strdup(line + 3);
 		free(line);
-		line = get_next_line(fd);
 	}
-	if (!line)
-		write_err("Error : Memory allocation failed (pass_newline)\n");
-	return (line);
 }
