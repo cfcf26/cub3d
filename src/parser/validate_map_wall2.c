@@ -31,15 +31,15 @@ static void	check_east_side(char **tmp_map, int x, int y)
 
 void	validate_map_wall2(char **tmp_map, int size[2])
 {
-	int	x;
-	int	y;
+	const char	set[4] = "NSWE";
+	int			x;
+	int			y;
 
-	x = 0;
-	y = 0;
-	while (x < size[1])
+	x = -1;
+	while (++x < size[1])
 	{
-		y = 0;
-		while (y < size[0])
+		y = -1;
+		while (++y < size[0])
 		{
 			if (tmp_map[x][y] == '0')
 			{
@@ -48,8 +48,10 @@ void	validate_map_wall2(char **tmp_map, int size[2])
 				check_west_side(tmp_map, x, y - 1);
 				check_east_side(tmp_map, x, y + 1);
 			}
-			y++;
+			if (ft_strchr(set, tmp_map[x][y]))
+			{
+				validate_player_location(tmp_map, x, y);
+			}
 		}
-		x++;
 	}
 }

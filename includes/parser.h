@@ -29,4 +29,5 @@ char	**make_map2(char *file_name, int size[2]);
 void	check_map_size(char *file_name, int size[2]);
 void	validate_map_wall(char **tmp_map, int size[2]);
 void	validate_map_wall2(char **tmp_map, int size[2]);
+void	validate_player_location(char **tmp_map, int x, int y);
 #endif
