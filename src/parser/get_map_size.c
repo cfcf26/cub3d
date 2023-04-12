@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 01:58:51 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 01:58:52 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/13 02:35:13 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ static int	get_height(char *file_name)
 
 	fd = open(file_name, O_RDONLY);
 	line = pass_before_map(fd);
-	if (!line)
-		write_err("Error : Memory allocation failed (get_height)\n");
 	height = 1;
 	while (line)
 	{
@@ -63,8 +61,6 @@ static int	*get_width(char *file_name, int height)
 	width = ft_calloc(height, sizeof(int));
 	fd = open(file_name, O_RDONLY);
 	line = pass_before_map(fd);
-	if (!line)
-		write_err("Error : Memory allocation failed (get_width)\n");
 	i = -1;
 	while (++i < height)
 	{
