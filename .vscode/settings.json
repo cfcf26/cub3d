@@ -21,6 +21,8 @@
         "stdio.h": "c",
         "boolean.h": "c",
         "models.h": "c",
-        "sstream": "c"
+        "sstream": "c",
+        "stdlib.h": "c",
+        "mlx_handing.h": "c"
     }
 }
