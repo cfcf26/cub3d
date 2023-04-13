@@ -28,4 +28,15 @@ typedef struct s_info
 	char	**map;
 }	t_info;
 
+typedef struct s_mlx
+{
+	void	*mlx;
+	void	*win;
+	void	*north;
+	void	*south;
+	void	*west;
+	void	*east;
+}	t_mlx;
+
+
 #endif
