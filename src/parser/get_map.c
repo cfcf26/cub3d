@@ -23,10 +23,10 @@ void	get_map(int fd)
 	i = -1;
 	while (++i < get_info()->height)
 	{
-		line[get_info()->width[i] - 1] = '\0';
+		if (line[get_info()->width[i] - 1] == '\n')
+			line[get_info()->width[i] - 1] = '\0';
 		map[i] = line;
 		line = get_next_line(fd);
 	}
-	map[i] = NULL;
 	get_info()->map = map;
 }
