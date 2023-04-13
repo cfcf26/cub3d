@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:52:30 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 21:45:05 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/14 01:53:16 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	validate_texture_file(char *line)
 	const int	len = ft_strlen(line);
 
 	line[len - 1] = '\0';
+	validate_file_extension(line, ".xpm");
 	open_f = open(line, O_RDONLY);
 	if (open_f == -1)
 		write_err("Error : Texture file open failed (1)\n");

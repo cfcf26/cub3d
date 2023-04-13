@@ -1,43 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   models.h                                           :+:      :+:    :+:   */
+/*   validate_file_extension.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/14 01:21:32 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/14 01:46:12 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/14 01:50:03 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MODELS_H
-# define MODELS_H
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
-# define TILE_SIZE 64
+#include "utils.h"
 
-typedef struct s_info
+void	validate_file_extension(char *file_name, char *extension)
 {
-	char	*file_name;
-	char	*no;
-	char	*so;
-	char	*we;
-	char	*ea;
-	int		floor[3];
-	int		ceiling[3];
-	int		height;
-	int		*width;
-	char	**map;
-}	t_info;
+	const int	i = ft_strlen(file_name);
+	const int	j = ft_strlen(extension);
 
-typedef struct s_mlx
-{
-	void	*mlx;
-	void	*win;
-	void	*north;
-	void	*south;
-	void	*west;
-	void	*east;
-}	t_mlx;
-
-#endif
+	if (i <= j)
+		write_err("Error : File name is too short (1)\n");
+	if (ft_strncmp(file_name + i - j, extension, j))
+		write_err("Error : Wrong file extension (1)\n");
+}
