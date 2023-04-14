@@ -40,4 +40,28 @@ typedef struct s_mlx
 	void	*east;
 }	t_mlx;
 
+typedef struct s_player_coord
+{
+	double	x;
+	double	y;
+}	t_player_coord;
+
+typedef struct s_direct_coord
+{
+	double	x;
+	double	y;
+}	t_direct_coord;
+
+typedef struct s_raycasting
+{
+	double	posx;
+	double	posy;
+	double	dirx;
+	doulbe	diry;
+	double	planex;
+	doulbe	planey;
+	doulbe	time;
+	double	old_time;
+}	t_raycasting;
+
 #endif
