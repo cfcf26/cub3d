@@ -58,10 +58,10 @@ typedef struct s_raycasting
 	double	posx;
 	double	posy;
 	double	dirx;
-	doulbe	diry;
+	double	diry;
 	double	planex;
-	doulbe	planey;
-	doulbe	time;
+	double	planey;
+	double	time;
 	double	old_time;
 }	t_ray;
 
