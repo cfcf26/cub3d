@@ -23,6 +23,7 @@ typedef struct s_info
 	char	*so;
 	char	*we;
 	char	*ea;
+	char	player_spawn;
 	int		floor[3];
 	int		ceiling[3];
 	int		height;

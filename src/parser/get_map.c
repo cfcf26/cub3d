@@ -14,15 +14,18 @@
 
 void	get_map(int fd)
 {
-	char	*line;
-	char	**map;
-	int		i;
+	const char	spawn[4] = "NEWS";
+	char		*line;
+	char		**map;
+	int			i;
 
 	line = pass_newline(fd);
 	map = ft_calloc(get_info()->height + 1, sizeof(char *));
 	i = -1;
 	while (++i < get_info()->height)
 	{
+		if (ft_strchr(spawn, line[get_info()->width[i]]))
+			get_info()->player_spawn;
 		if (line[get_info()->width[i] - 1] == '\n')
 			line[get_info()->width[i] - 1] = '\0';
 		map[i] = line;
