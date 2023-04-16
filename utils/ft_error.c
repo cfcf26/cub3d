@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   write_err.c                                        :+:      :+:    :+:   */
+/*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:37:44 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 11:36:09 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/16 18:54:51 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void	write_err(char *str)
+void	ft_error(char *str)
 {
-	write(1, str, ft_strlen(str));
-	write(1, "\n", 1);
-	exit(1);
+	perror(str);
+	exit(EXIT_FAILURE);
 }

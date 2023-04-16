@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 02:33:38 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/16 18:54:53 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ char	*pass_newline(int fd)
 		line = get_next_line(fd);
 	}
 	if (!line)
-		write_err("Error : Memory allocation failed (1)\n");
+		ft_error("Error : Memory allocation failed (1)\n");
 	return (line);
 }

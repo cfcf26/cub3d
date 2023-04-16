@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 01:13:46 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/14 01:56:35 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/16 18:54:53 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	validate_mlx_init(t_mlx *mlx)
 {
 	if (mlx->north == NULL)
-		write_err("Error : Mlx north texture init failed (1)");
+		ft_error("Error : Mlx north texture init failed (1)");
 	if (mlx->south == NULL)
-		write_err("Error : Mlx south texture init failed (1)");
+		ft_error("Error : Mlx south texture init failed (1)");
 	if (mlx->west == NULL)
-		write_err("Error : Mlx west texture init failed (1)");
+		ft_error("Error : Mlx west texture init failed (1)");
 	if (mlx->east == NULL)
-		write_err("Error : Mlx east texture init failed (1)");
+		ft_error("Error : Mlx east texture init failed (1)");
 }
 
 static t_mlx	*init_mlx_struct(void)
@@ -34,10 +34,10 @@ static t_mlx	*init_mlx_struct(void)
 	mlx = (t_mlx *)malloc(sizeof(t_mlx));
 	mlx->mlx = mlx_init();
 	if (mlx->mlx == NULL)
-		write_err("Error : Mlx init failed (1)");
+		ft_error("Error : Mlx init failed (1)");
 	mlx->win = mlx_new_window(mlx->mlx, WIN_WIDTH, WIN_HEIGHT, "Cub3D");
 	if (mlx->win == NULL)
-		write_err("Error : Mlx window init failed (1)");
+		ft_error("Error : Mlx window init failed (1)");
 	mlx->north = mlx_xpm_file_to_image(mlx->mlx, info->no, &width, &height);
 	mlx->south = mlx_xpm_file_to_image(mlx->mlx, info->so, &width, &height);
 	mlx->west = mlx_xpm_file_to_image(mlx->mlx, info->we, &width, &height);

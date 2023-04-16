@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:54:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/14 01:12:13 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/16 18:46:00 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static void	validate_color(char *line)
 
 	color = ft_split(line, ',');
 	if (!color || !color[0] || !color[1] || !color[2])
-		write_err("Error : Wrong floor or ceiling color (2)\n");
+		ft_error("Error : Wrong floor or ceiling color (2)\n");
 	rgb[0] = ft_atoi(color[0]);
 	rgb[1] = ft_atoi(color[1]);
 	rgb[2] = ft_atoi(color[2]);
 	if (rgb[0] < 0 || rgb[0] > 255 || rgb[1] < 0 || rgb[1] > 255 \
 	|| rgb[2] < 0 || rgb[2] > 255)
-		write_err("Error : Wrong floor or ceiling color (3)\n");
+		ft_error("Error : Wrong floor or ceiling color (3)\n");
 	free(color[0]);
 	free(color[1]);
 	free(color[2]);
@@ -48,7 +48,7 @@ void	validate_floor_ceiling_colors(int fd)
 			else if (line[0] == 'C' && !(flag & 2))
 				flag |= 2;
 			else
-				write_err("Error : Wrong floor or ceiling color (1)\n");
+				ft_error("Error : Wrong floor or ceiling color (1)\n");
 			validate_color(line + 2);
 		}
 		free(line);
