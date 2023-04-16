@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 01:13:46 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/16 18:54:53 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/16 19:22:26 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ static void	validate_mlx_init(t_mlx *mlx)
 		ft_error("Error : Mlx east texture init failed (1)");
 }
 
+static void	check_image_size(int width, int height)
+{
+	if (width != TILE_SIZE || height != TILE_SIZE)
+		write_err("Error : Mlx texture size is not 64x64 (1)");
+}
+
 static t_mlx	*init_mlx_struct(void)
 {
 	const t_info	*info = get_info();
@@ -39,9 +45,13 @@ static t_mlx	*init_mlx_struct(void)
 	if (mlx->win == NULL)
 		ft_error("Error : Mlx window init failed (1)");
 	mlx->north = mlx_xpm_file_to_image(mlx->mlx, info->no, &width, &height);
+	check_image_size(width, height);
 	mlx->south = mlx_xpm_file_to_image(mlx->mlx, info->so, &width, &height);
+	check_image_size(width, height);
 	mlx->west = mlx_xpm_file_to_image(mlx->mlx, info->we, &width, &height);
+	check_image_size(width, height);
 	mlx->east = mlx_xpm_file_to_image(mlx->mlx, info->ea, &width, &height);
+	check_image_size(width, height);
 	return (mlx);
 }
 
