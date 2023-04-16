@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/14 16:55:47 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/16 19:22:56 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ typedef struct s_raycasting
 	double	posx;
 	double	posy;
 	double	dirx;
-	doulbe	diry;
+	double	diry;
 	double	planex;
-	doulbe	planey;
-	doulbe	time;
+	double	planey;
+	double	time;
 	double	old_time;
 }	t_ray;
 
