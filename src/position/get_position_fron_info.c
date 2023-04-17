@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:31:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:18:25 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/17 19:45:02 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static char	get_pos(t_position *position, t_info *info)
 			}
 		}
 	}
+	return (0);
 }
 
 static void	get_dir(t_position *position, char dir)
@@ -92,5 +93,5 @@ void	get_position_from_info(void)
 	dir = get_pos(position, info);
 	get_dir(position, dir);
 	get_plane(position, dir);
-	position->get_time = get_time;
+	// position->get_time = get_time;
 }

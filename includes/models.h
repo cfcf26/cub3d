@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:35:04 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/17 19:44:35 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_position
 	double	dir_y;
 	double	plane_x;
 	double	plane_y;
-	double	(*get_time)(void);
+	// double	(*get_time)(void);
 }	t_position;
 
 typedef struct s_mlx

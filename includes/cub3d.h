@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:15:49 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/11 11:36:58 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/17 19:22:38 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,9 @@
 
 # include "utils.h"
 # include "parser.h"
+# include "mlx_utils.h"
+# include "position.h"
+# include "raycasting.h"
+
 
 #endif
