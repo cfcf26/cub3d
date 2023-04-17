@@ -28,6 +28,13 @@ typedef struct s_info
 	int		height;
 	int		*width;
 	char	**map;
+	double	posx;
+	double	posy;
+	double	dirx;
+	double	diry;
+	double	planex;
+	double	planey;
+	double	time;
 }	t_info;
 
 typedef struct s_mlx
@@ -39,29 +46,5 @@ typedef struct s_mlx
 	void	*west;
 	void	*east;
 }	t_mlx;
-
-typedef struct s_player_coord
-{
-	double	x;
-	double	y;
-}	t_player;
-
-typedef struct s_direct_coord
-{
-	double	x;
-	double	y;
-}	t_dir;
-
-typedef struct s_raycasting
-{
-	double	posx;
-	double	posy;
-	double	dirx;
-	double	diry;
-	double	planex;
-	double	planey;
-	double	time;
-	double	old_time;
-}	t_ray;
 
 #endif
