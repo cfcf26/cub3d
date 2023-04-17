@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   perform_dda.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 23:59:01 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 18:03:42 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/17 17:51:49 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/17 17:59:40 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @file ft_strlen.c
- * @author ekwak (student.42seoul.kr)
- * @brief calc the length of a string.
- */
-#include "libft.h"
+#include "raycasting.h"
 
-/**
- * @brief calc the length of a string.
- * 
- * @param s 
- * @return size_t 
- */
-size_t	ft_strlen(const char *s)
+void	perform_dda(t_ray *ray, t_info *info)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	while (ray->hit == 0)
+	{
+		if (ray->side_dist_x < ray->side_dist_y)
+		{
+			ray->side_dist_x += ray->delta_dist_x;
+			ray->map_x += ray->step_x;
+			ray->side = 0;
+		}
+		else
+		{
+			ray->side_dist_y += ray->delta_dist_y;
+			ray->map_y += ray->step_y;
+			ray->side = 1;
+		}
+		if (info->map[ray->map_x][ray->map_y] == '1')
+			ray->hit = 1;
+	}
 }

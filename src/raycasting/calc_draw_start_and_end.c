@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   calc_draw_start_and_end.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/10 23:59:01 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 18:03:42 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/17 18:04:08 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/17 18:04:12 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/**
- * @file ft_strlen.c
- * @author ekwak (student.42seoul.kr)
- * @brief calc the length of a string.
- */
-#include "libft.h"
+#include "raycasting.h"
 
-/**
- * @brief calc the length of a string.
- * 
- * @param s 
- * @return size_t 
- */
-size_t	ft_strlen(const char *s)
+void	calc_draw_start_and_end(t_ray *ray)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	ray->draw_start = -ray->line_height / 2 + WIN_HEIGHT / 2;
+	if (ray->draw_start < 0)
+		ray->draw_start = 0;
+	ray->draw_end = ray->line_height / 2 + WIN_HEIGHT / 2;
+	if (ray->draw_end >= WIN_HEIGHT)
+		ray->draw_end = WIN_HEIGHT - 1;
 }

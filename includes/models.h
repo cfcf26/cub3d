@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:19:37 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/17 17:35:04 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,26 @@ typedef struct s_mlx
 	void	*west;
 	void	*east;
 }	t_mlx;
+
+typedef struct s_ray
+{
+	double	camera_x;
+	double	ray_dir_x;
+	double	ray_dir_y;
+	int		map_x;
+	int		map_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	double	perp_wall_dist;
+	int		step_x;
+	int		step_y;
+	int		hit;
+	int		side;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
+}	t_ray;
 
 #endif
