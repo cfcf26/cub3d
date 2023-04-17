@@ -41,47 +41,36 @@ typedef struct s_mlx
 	void	*east;
 }	t_mlx;
 
-typedef struct s_player_coord
+typedef struct s_position
 {
-	double	x;
-	double	y;
-}	t_player;
-
-typedef struct s_direct_coord
-{
-	double	x;
-	double	y;
-	char	player_spawn;
-}	t_dir;
-
-typedef struct s_ray_info
-{
-	double	posx;
-	double	posy;
-	double	dirx;
-	double	diry;
-	double	planex;
-	double	planey;
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
 	double	time;
 	double	old_time;
-}	t_ray_info;
+}	t_position;
 
-typedef struct s_ray_casting
+typedef struct s_ray
 {
-	double	camerax;
-	double	raydirx;
-	double	raydiry;
-	int		mapx;
-	int		mapy;
-	double	sidedistx;
-	double	sidedisty;
-	double	deltadistx;
-	double	deltadisty;
+	double	camera_x;
+	double	raydir_x;
+	double	raydir_y;
+	int		map_x;
+	int		map_y;
+	double	sidedist_x;
+	double	sidedist_y;
+	double	deltadist_x;
+	double	deltadist_y;
 	double	prerpwalldist;
-	int		stepx;
-	int		stepy;
+	int		step_x;
+	int		step_y;
 	int		hit;
 	int		side;
+	char	**buff;
+	int		**texnum;
 }	t_ray;
 
 #endif
