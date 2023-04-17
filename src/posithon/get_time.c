@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_mlx.c                                          :+:      :+:    :+:   */
+/*   get_time.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 01:13:46 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:20:46 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/17 16:21:43 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/17 16:21:43 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-t_mlx	*get_mlx(void)
+double	get_time(void)
 {
-	static t_mlx	mlx;
+	struct timeval	tv;
+	static double	old_time;
+	double			new_time;
+	double			time;
 
-	return (&mlx);
+	gettimeofday(&tv, NULL);
+	if (old_time == 0)
+		old_time = (double)tv.tv_sec + (double)tv.tv_usec * 0.000001;
+	new_time = (double)tv.tv_sec + (double)tv.tv_usec * 0.000001;
+	time = new_time - old_time;
+	old_time = new_time;
+	return (time);
 }

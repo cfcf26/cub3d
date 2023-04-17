@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/16 19:22:56 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/17 17:19:37 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 # define TILE_SIZE 64
+# define VALID_MAP_CHAR "012NSEW "
+# define VALID_PLAYER_CHAR "NSEW"
 
 typedef struct s_info
 {
@@ -28,14 +30,18 @@ typedef struct s_info
 	int		height;
 	int		*width;
 	char	**map;
-	double	posx;
-	double	posy;
-	double	dirx;
-	double	diry;
-	double	planex;
-	double	planey;
-	double	time;
 }	t_info;
+
+typedef struct s_position
+{
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+	double	(*get_time)(void);
+}	t_position;
 
 typedef struct s_mlx
 {

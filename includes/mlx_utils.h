@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_mlx.c                                          :+:      :+:    :+:   */
+/*   mlx_utils.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 01:13:46 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:20:46 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/17 17:16:14 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/17 17:16:53 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#ifndef MLX_UTILS_H
+# define MLX_UTILS_H
 
-t_mlx	*get_mlx(void)
-{
-	static t_mlx	mlx;
+# include "utils.h"
 
-	return (&mlx);
-}
+t_mlx	*init_mlx_struct(void);
+
+#endif

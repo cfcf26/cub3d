@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:31:12 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 02:10:42 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/17 16:49:04 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define PARSER_H
 
 # include "utils.h"
-
-# define VALID_MAP_CHAR "012NSEW "
-# define VALID_PLAYER_CHAR "NSEW"
 
 void	parser(int ac, char **av);
 /*void	validate_file_contents(int ac, char **av);*/

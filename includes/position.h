@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_mlx.c                                          :+:      :+:    :+:   */
+/*   position.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 01:13:46 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:20:46 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/17 16:36:10 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/17 17:20:55 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#ifndef POSITION_H
+# define POSITION_H
 
-t_mlx	*get_mlx(void)
-{
-	static t_mlx	mlx;
+# include "utils.h"
 
-	return (&mlx);
-}
+double		get_time(void);
+void		get_position_from_info(void);
+#endif
