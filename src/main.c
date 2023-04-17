@@ -15,6 +15,7 @@
 int	main(int argc, char **argv)
 {
 	parser(argc, argv);
+	make_coord(argc, argv);
 	test_printf("test");
 	test_print_info();
 	return (0);

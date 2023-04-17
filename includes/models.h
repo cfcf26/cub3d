@@ -51,9 +51,10 @@ typedef struct s_direct_coord
 {
 	double	x;
 	double	y;
+	char	player_spawn;
 }	t_dir;
 
-typedef struct s_raycasting
+typedef struct s_ray_info
 {
 	double	posx;
 	double	posy;
@@ -63,6 +64,24 @@ typedef struct s_raycasting
 	double	planey;
 	double	time;
 	double	old_time;
+}	t_ray_info;
+
+typedef struct s_ray_casting
+{
+	double	camerax;
+	double	raydirx;
+	double	raydiry;
+	int		mapx;
+	int		mapy;
+	double	sidedistx;
+	double	sidedisty;
+	double	deltadistx;
+	double	deltadisty;
+	double	prerpwalldist;
+	int		stepx;
+	int		stepy;
+	int		hit;
+	int		side;
 }	t_ray;
 
 #endif
