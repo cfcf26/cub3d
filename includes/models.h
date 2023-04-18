@@ -74,4 +74,11 @@ typedef struct s_ray
 	int		draw_end;
 }	t_ray;
 
+typedef struct s_cub3d
+{
+	t_info		s_info;
+	t_mlx		s_mlx;
+	t_position	s_position;
+}	t_cub3d;
+
 #endif
