@@ -19,5 +19,9 @@
 # include "position.h"
 # include "raycasting.h"
 
-
+void	turn_right(t_position *position);
+void	turn_left(t_position *position);
+int		main_loop(t_cub3d *cub3d);
+int		key_press(int key, t_cub3d *cub3d);
+int		red_button(t_cub3d *cub3d);
 #endif

@@ -16,5 +16,6 @@
 # include "utils.h"
 
 t_mlx	*init_mlx_struct(void);
-
+t_cub3d	*init_cub3d_struct(void);
+void	init_imagine(void);
 #endif

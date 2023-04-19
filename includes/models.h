@@ -29,6 +29,15 @@
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
 
+typedef struct s_img
+{
+	void	*img;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+}	t_img;
+
 typedef struct s_info
 {
 	char	*file_name;
@@ -97,20 +106,11 @@ typedef struct s_ray
 	int		color;
 }	t_ray;
 
-typedef struct s_img
-{
-	void	*img;
-	int		*data;
-	int		size_l;
-	int		bpp;
-	int		endian;
-}	t_img;
-
 typedef struct s_cub3d
 {
-	t_info		s_info;
-	t_mlx		s_mlx;
-	t_position	s_position;
+	t_info		*info;
+	t_mlx		*mlx;
+	t_position	*position;
 }	t_cub3d;
 
 #endif
