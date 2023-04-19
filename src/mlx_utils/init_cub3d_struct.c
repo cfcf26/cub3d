@@ -3,7 +3,7 @@
 
 t_cub3d	*init_cub3d_struct(void)
 {
-	t_cub3d	*cub3d;
+	t_cub3d		*cub3d;
 
 	cub3d = get_cub3d();
 	cub3d->info = get_info();

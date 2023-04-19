@@ -17,6 +17,17 @@
 # define TILE_SIZE 64
 # define VALID_MAP_CHAR "012NSEW "
 # define VALID_PLAYER_CHAR "NSEW"
+# define X_EVENT_KEY_PRESS	2
+# define X_EVENT_KEY_RELEASE 3
+
+# define RED_BUTTON 17
+# define KEY_ESC 53
+# define KEY_W 13
+# define KEY_A 0
+# define KEY_S 1
+# define KEY_D 2
+# define KEY_LEFT 123
+# define KEY_RIGHT 124
 
 typedef struct s_info
 {
@@ -30,6 +41,9 @@ typedef struct s_info
 	int		height;
 	int		*width;
 	char	**map;
+	int		**text;
+	int		**buf;
+	t_img	img;
 }	t_info;
 
 typedef struct s_position
@@ -40,6 +54,8 @@ typedef struct s_position
 	double	dir_y;
 	double	plane_x;
 	double	plane_y;
+	double	move_speed;
+	double	rot_speed;
 	// double	(*get_time)(void);
 }	t_position;
 
@@ -72,7 +88,23 @@ typedef struct s_ray
 	int		line_height;
 	int		draw_start;
 	int		draw_end;
+	int		tex_num;
+	double	wall_x;
+	int		tex_x;
+	int		tex_y;
+	double	tex_pos;
+	double	step;
+	int		color;
 }	t_ray;
+
+typedef struct s_img
+{
+	void	*img;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+}	t_img;
 
 typedef struct s_cub3d
 {
