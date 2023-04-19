@@ -36,6 +36,8 @@ typedef struct s_img
 	int		size_l;
 	int		bpp;
 	int		endian;
+	int		img_width;
+	int		img_heigth;
 }	t_img;
 
 typedef struct s_info
