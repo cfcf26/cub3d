@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:14:21 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:19:40 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/21 04:30:32 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ void	move_left(void)
 	position = get_position();
 	info = get_info();
 	if (ft_strchr(not_wall, info->map \
-	[(int)(position->pos_x - position->dir_y * MOVE_SPEED -0.01)] \
+	[(int)(position->pos_x + position->dir_y * MOVE_SPEED +0.01)] \
 	[(int)position->pos_y]))
-		position->pos_x -= position->dir_y * MOVE_SPEED;
+		position->pos_x += position->dir_y * MOVE_SPEED;
 	if (ft_strchr(not_wall, info->map \
 	[(int)position->pos_x] \
-	[(int)(position->pos_y + position->dir_x * MOVE_SPEED +0.01)]))
-		position->pos_y += position->dir_x * MOVE_SPEED;
+	[(int)(position->pos_y - position->dir_x * MOVE_SPEED -0.01)]))
+		position->pos_y -= position->dir_x * MOVE_SPEED;
 }
 
 void	move_right(void)
@@ -75,11 +75,11 @@ void	move_right(void)
 	position = get_position();
 	info = get_info();
 	if (ft_strchr(not_wall, info->map \
-	[(int)(position->pos_x + position->dir_y * MOVE_SPEED +0.01)] \
+	[(int)(position->pos_x - position->dir_y * MOVE_SPEED -0.01)] \
 	[(int)position->pos_y]))
-		position->pos_x += position->dir_y * MOVE_SPEED;
+		position->pos_x -= position->dir_y * MOVE_SPEED;
 	if (ft_strchr(not_wall, info->map \
 	[(int)position->pos_x] \
-	[(int)(position->pos_y - position->dir_x * MOVE_SPEED -0.01)]))
-		position->pos_y -= position->dir_x * MOVE_SPEED;
+	[(int)(position->pos_y + position->dir_x * MOVE_SPEED +0.01)]))
+		position->pos_y += position->dir_x * MOVE_SPEED;
 }
