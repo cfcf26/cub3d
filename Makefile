@@ -6,7 +6,7 @@
 #    By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 16:40:03 by ekwak             #+#    #+#              #
-#    Updated: 2023/04/17 19:23:32 by ekwak            ###   ########.fr        #
+#    Updated: 2023/04/20 22:53:38 by ekwak            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,9 @@ LFLAGS = -L./$(LIBFT_DIR) -lft -L./$(MLX_DIR) -lmlx -framework OpenGL -framework
 SRCS = $(wildcard src/*.c) \
 	   $(wildcard src/parser/*.c) \
 	   $(wildcard src/position/*.c) \
-	   $(wildcard src/raycasting/*.c) \
 	   $(wildcard src/mlx_utils/*.c) \
-       $(wildcard utils/*.c) \
+	   $(wildcard utils/*.c) \
+	   $(wildcard src/raycasting/*.c) \
 	   
 
 OBJS = $(SRCS:.c=.o)

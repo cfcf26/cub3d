@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:08:07 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:02:44 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/20 20:13:12 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char		*pass_not_newline(int fd);
 t_info		*get_info(void);
 t_mlx		*get_mlx(void);
 t_position	*get_position(void);
+t_ray		*get_ray(void);
 
 void		validate_file_extension(char *file_name, char *extension);
 #endif
