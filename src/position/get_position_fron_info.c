@@ -93,5 +93,4 @@ void	get_position_from_info(void)
 	dir = get_pos(position, info);
 	get_dir(position, dir);
 	get_plane(position, dir);
-	// position->get_time = get_time;
 }

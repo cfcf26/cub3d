@@ -17,14 +17,15 @@ int	main(int argc, char **argv)
 	t_cub3d	*cub3d;
 
 	parser(argc, argv);
+	get_position();
 	init_mlx_struct();
-	init_cub3d_struct();
-	test_printf("test");
-	test_print_info();
 	init_imagine();
-	mlx_loop_hook(get_mlx()->mlx, &main_loop, &cub3d);
-	mlx_hook(get_mlx()->win, X_EVENT_KEY_PRESS, 0, &key_press, &cub3d);
-	mlx_hook(get_mlx()->win, RED_BUTTON, 0, &red_button, &cub3d);
+	cub3d = init_cub3d_struct();
+	// test_printf("test");
+	// test_print_info();
+	mlx_loop_hook(get_mlx()->mlx, &main_loop, cub3d);
+	mlx_hook(get_mlx()->win, X_EVENT_KEY_PRESS, 0, &key_press, cub3d);
+	mlx_hook(get_mlx()->win, RED_BUTTON, 0, &red_button, cub3d);
 	mlx_loop(get_mlx()->mlx);
 	return (0);
 }

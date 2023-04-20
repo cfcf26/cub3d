@@ -52,7 +52,7 @@ typedef struct s_info
 	int		height;
 	int		*width;
 	char	**map;
-	int		**text;
+	int		text[4][4096];
 	int		**buf;
 	t_img	img;
 }	t_info;

@@ -124,23 +124,24 @@ void	calc(t_cub3d *cub3d)
 {
 	t_position			*position;
 	t_info				*info;
-	t_ray				*ray;
+	t_ray				ray;
 	int					x;
 
 	position = cub3d->position;
 	info = cub3d->info;
-	ray = NULL;
-	ray->hit = 0;
+	ft_memset(&ray, 0, 1);
 	x = -1;
 	while (++x < WIN_WIDTH)
 	{
-		make_ray(ray, position, x);
-		get_sidedist(ray, position);
-		dda_calc(ray, position);
-		get_draw_info(ray);
-		get_wall_x(ray, info, position);
-		get_coord_texture(ray);
-		draw_line(x, ray, info);
+		make_ray(&ray, position, x);
+		get_sidedist(&ray, position);
+		dda_calc(&ray, position);
+		get_draw_info(&ray);
+		get_wall_x(&ray, info, position);
+		get_coord_texture(&ray);
+		draw_line(x, &ray, info);
+		printf("camera_x : %f \n ray_dir_x : %f \n ray_dir_y : %f \n map_x : %d \n map_y : %d \n side_dist_x : %f \n side_dist_y : %f \n delta_dist_x : %f \n delta_dist_y : %f \n perp_wall_dist : %f \n step_x : %d \n step_y : %d \n hit : %d \n side : %d \n line_height : %d \n draw_start : %d \n draw_end : %d \n tex_num : %d \n wall_x : %f \n tex_x : %d \n tex_y : %d \n tex_pos : %f \n step : %f \n color : %d", ray.camera_x, ray.ray_dir_x, ray.ray_dir_y, ray.map_x, ray.map_y, ray.side_dist_x, ray.side_dist_y, ray.delta_dist_x, ray.delta_dist_y, ray.perp_wall_dist, ray.step_x, ray.step_y, ray.hit, ray.side, ray.line_height, ray.draw_start, ray.draw_end, ray.tex_num, ray.wall_x, ray.tex_x, ray.tex_y, ray.tex_pos, ray.step, ray.color);
+		exit(0);
 	}
 }
 

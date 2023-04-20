@@ -31,12 +31,12 @@
 // 	mlx_destroy_image(mlx->mlx, img->img);
 // }
 
-void	load_image(t_mlx *mlx, int *texture, char *path, t_img *img)
+void	load_image(t_mlx *mlx, int *texture, t_img *img, void *mlx_xpm_img)
 {
 	int	x;
 	int	y;
 
-	img->img = mlx_xpm_file_to_image(mlx->mlx, path, &img->img_width, &img->img_heigth);
+	img->img = mlx_xpm_img;
 	img->data = (int *)mlx_get_data_addr(img->img, &img->bpp, &img->size_l, &img->endian);
 	y = -1;
 	while (++y < img->img_heigth)
@@ -54,12 +54,10 @@ void	load_texture(t_info *info, t_mlx *mlx)
 {
 	t_img	img;
 
-	printf("%d\n", info->text[0][1]);
-	return ;
-	load_image(mlx, info->text[0], info->no, &img);
-	load_image(mlx, info->text[1], info->so, &img);
-	load_image(mlx, info->text[2], info->ea, &img);
-	load_image(mlx, info->text[3], info->we, &img);
+	load_image(mlx, info->text[0], &img, mlx->north);
+	load_image(mlx, info->text[1], &img, mlx->south);
+	load_image(mlx, info->text[2], &img, mlx->west);
+	load_image(mlx, info->text[3], &img, mlx->east);
 
 }
 
@@ -89,27 +87,20 @@ void	get_buff(int **buff)
 	}
 }
 
-void	get_text(int **text)
+void	get_text(t_info *info)
 {
 	int	i;
 	int	j;
 
-	text = (int **)malloc(sizeof(int *) * 4);
-	if (!text)
-		ft_error("Error : text malloc error (1)\n");
-	i = -1;
-	while (++i < 4)
-	{
-		text[i] = (int *)malloc(sizeof(int) * (TILE_SIZE * TILE_SIZE));
-		if (!text[i])
-			ft_error("Error : text malloc error(2)\n");
-	}
 	i = -1;
 	while (++i < 4)
 	{
 		j = -1;
-		while (++j < TILE_SIZE * TILE_SIZE)
-			text[i][j] = 0;
+		while (++j < 64 * 64)
+		{
+			printf("%d	%d\n", i, j);
+			info->text[i][j] = 0;
+		}
 	}
 }
 
@@ -123,7 +114,7 @@ void	init_imagine(void)
 	mlx = get_mlx();
 	img = get_info()->img;
 	get_buff(info->buf);
-	get_text(info->text);
+	// get_text(info);
 	load_texture(info, mlx);
 	img.img = mlx_new_image(mlx->mlx, WIN_WIDTH, WIN_HEIGHT);
 	img.data = \
