@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   key_press.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/10 21:15:49 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:20:36 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/21 04:16:50 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/21 04:19:40 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "key.h"
 
-# include "utils.h"
-# include "parser.h"
-# include "mlx_utils.h"
-# include "position.h"
-# include "raycaste.h"
-# include "key.h"
-
-#endif
+int	key_press(int keycode)
+{
+	if (keycode == KEY_ESC)
+		exit(0);
+	if (keycode == KEY_W)
+		move_forward();
+	if (keycode == KEY_S)
+		move_backward();
+	if (keycode == KEY_A)
+		move_left();
+	if (keycode == KEY_D)
+		move_right();
+	if (keycode == KEY_LEFT)
+		rotate_left();
+	if (keycode == KEY_RIGHT)
+		rotate_right();
+	return (0);
+}

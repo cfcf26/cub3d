@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 03:29:07 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/21 04:25:16 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,6 @@
 # define VALID_PLAYER_CHAR "NSEW"
 # define MOVE_SPEED 0.5
 # define ROT_SPEED 0.05
-# define X_EVENT_KEY_PRESS	2
-# define X_EVENT_KEY_RELEASE 3
-
-# define RED_BUTTON 17
-# define KEY_ESC 53
-# define KEY_W 13
-# define KEY_A 0
-# define KEY_S 1
-# define KEY_D 2
-# define KEY_LEFT 123
-# define KEY_RIGHT 124
 
 typedef struct s_info
 {
@@ -71,7 +60,6 @@ typedef struct s_mlx
 	t_img	texture[4];
 	t_img	canvas;
 	int		buf[WIN_HEIGHT][WIN_WIDTH];
-	int		re_buf;
 }	t_mlx;
 
 typedef struct s_ray
@@ -104,6 +92,5 @@ typedef struct s_draw
 	double	step;
 	int		color;
 }	t_draw;
-
 
 #endif

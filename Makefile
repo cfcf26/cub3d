@@ -6,7 +6,7 @@
 #    By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 16:40:03 by ekwak             #+#    #+#              #
-#    Updated: 2023/04/20 22:53:38 by ekwak            ###   ########.fr        #
+#    Updated: 2023/04/21 04:24:28 by ekwak            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,13 @@ MLX = $(MLX_DIR)/libmlx.a
 INCLUDES = -I./includes -I./$(LIBFT_DIR) -I./$(MLX_DIR)
 LFLAGS = -L./$(LIBFT_DIR) -lft -L./$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 
-SRCS = $(wildcard src/*.c) \
+SRCS = $(wildcard utils/*.c) \
+	   $(wildcard src/*.c) \
 	   $(wildcard src/parser/*.c) \
 	   $(wildcard src/position/*.c) \
 	   $(wildcard src/mlx_utils/*.c) \
-	   $(wildcard utils/*.c) \
-	   $(wildcard src/raycasting/*.c) \
+	   $(wildcard src/key/*.c) \
+	   $(wildcard src/raycaste/*.c) \
 	   
 
 OBJS = $(SRCS:.c=.o)
