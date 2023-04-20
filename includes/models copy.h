@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   models.h                                           :+:      :+:    :+:   */
+/*   models copy.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 03:29:07 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/20 19:18:19 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # define TILE_SIZE 64
 # define VALID_MAP_CHAR "012NSEW "
 # define VALID_PLAYER_CHAR "NSEW"
-# define MOVE_SPEED 0.5
-# define ROT_SPEED 0.05
 # define X_EVENT_KEY_PRESS	2
 # define X_EVENT_KEY_RELEASE 3
 
@@ -30,6 +28,17 @@
 # define KEY_D 2
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
+
+typedef struct s_img
+{
+	void	*img;
+	int		*data;
+	int		size_l;
+	int		bpp;
+	int		endian;
+	int		img_width;
+	int		img_heigth;
+}	t_img;
 
 typedef struct s_info
 {
@@ -44,16 +53,7 @@ typedef struct s_info
 	int		*width;
 	char	**map;
 }	t_info;
-typedef struct s_img
-{
-	void	*img;
-	int		*data;
-	int		size_line;
-	int		bpp;
-	int		endian;
-	int		width;
-	int		height;
-}	t_img;
+
 typedef struct s_position
 {
 	double	pos_x;
@@ -62,6 +62,8 @@ typedef struct s_position
 	double	dir_y;
 	double	plane_x;
 	double	plane_y;
+	double	move_speed;
+	double	rot_speed;
 }	t_position;
 
 typedef struct s_mlx
@@ -69,16 +71,14 @@ typedef struct s_mlx
 	void	*mlx;
 	void	*win;
 	t_img	texture[4];
-	t_img	canvas;
-	int		buf[WIN_HEIGHT][WIN_WIDTH];
-	int		re_buf;
+	int		buf[800][600];
 }	t_mlx;
 
 typedef struct s_ray
 {
 	double	camera_x;
-	double	dir_x;
-	double	dir_y;
+	double	ray_dir_x;
+	double	ray_dir_y;
 	int		map_x;
 	int		map_y;
 	double	side_dist_x;
@@ -90,20 +90,23 @@ typedef struct s_ray
 	int		step_y;
 	int		hit;
 	int		side;
-}	t_ray;
-
-typedef struct s_draw
-{
 	int		line_height;
 	int		draw_start;
 	int		draw_end;
 	int		tex_num;
+	double	wall_x;
 	int		tex_x;
 	int		tex_y;
 	double	tex_pos;
 	double	step;
 	int		color;
-}	t_draw;
+}	t_ray;
 
+typedef struct s_cub3d
+{
+	t_info		*info;
+	t_mlx		*mlx;
+	t_position	*position;
+}	t_cub3d;
 
 #endif

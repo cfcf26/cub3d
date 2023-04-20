@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:10:15 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/20 21:14:32 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/21 02:54:12 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ t_mlx	*init_mlx_struct(void)
 	get_texture(&mlx->texture[2], info->we, mlx->mlx);
 	get_texture(&mlx->texture[3], info->ea, mlx->mlx);
 	init_buffer(mlx);
+	mlx->re_buf = 0;
 	return (mlx);
 }

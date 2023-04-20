@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:30:45 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 01:05:44 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/21 03:38:40 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,9 @@ void	calc_dda(t_ray *ray)
 			ray->hit = 1;
 	}
 	if (ray->side == 0)
-		ray->perp_wall_dist = (ray->map_x - get_position()->pos_x
-				+ (1 - ray->step_x) / 2) / ray->dir_x;
+		ray->perp_wall_dist = ray->side_dist_x - ray->delta_dist_x;
 	else
-		ray->perp_wall_dist = (ray->map_y - get_position()->pos_y
-				+ (1 - ray->step_y) / 2) / ray->dir_y;
+		ray->perp_wall_dist = ray->side_dist_y - ray->delta_dist_y;
 }
 
 void	calc_draw_start_and_end(t_draw *draw, t_ray *ray)
@@ -83,9 +81,6 @@ void	calc_draw_start_and_end(t_draw *draw, t_ray *ray)
 	draw->draw_end = draw->line_height / 2 + WIN_HEIGHT / 2;
 	if (draw->draw_end >= WIN_HEIGHT)
 		draw->draw_end = WIN_HEIGHT - 1;
-	// printf("draw_line_height = %d, ray->perp_wall_dist = %f\n", draw->line_height, ray->perp_wall_dist);
-	// printf("draw_start = %d, draw_end = %d ", draw->draw_start, draw->draw_end);
-	// exit(0);
 }
 
 void	calc_texture(t_draw *draw, t_ray *ray)
@@ -99,9 +94,9 @@ void	calc_texture(t_draw *draw, t_ray *ray)
 		wall_x = position->pos_x + ray->perp_wall_dist * ray->dir_x;
 	wall_x -= floor(wall_x);
 	draw->tex_x = (int)(wall_x * (double)TILE_SIZE);
-	if (ray->side == 0 && ray->dir_x > 0)
+	if (ray->side == 0)
 		draw->tex_x = TILE_SIZE - draw->tex_x - 1;
-	if (ray->side == 1 && ray->dir_y < 0)
+	if (ray->side == 1)
 		draw->tex_x = TILE_SIZE - draw->tex_x - 1;
 	draw->step = 1.0 * TILE_SIZE / draw->line_height;
 	draw->tex_pos = (draw->draw_start - WIN_HEIGHT / 2 + draw->line_height / 2) * draw->step;
@@ -151,6 +146,7 @@ void	calculation(void)
 		calc_draw_start_and_end(&draw, &ray);
 		calc_texture(&draw, &ray);
 		draw_wall(&draw, &ray, get_mlx(), x);
+		get_mlx()->re_buf = 1;
 		x++;
 	}
 }
@@ -179,6 +175,8 @@ void	reset_buf(t_mlx *mlx)
 	int	i;
 	int	j;
 
+	if (mlx->re_buf == 0)
+		return ;
 	i = -1;
 	while (++i < WIN_HEIGHT)
 	{
@@ -196,6 +194,125 @@ int	main_loop(void)
 	return (0);
 }
 
+void	move_forward(void)
+{
+	const char	not_wall[5] = "0NEWS";
+	t_position	*position;
+	t_info		*info;
+
+	position = get_position();
+	info = get_info();
+	if (ft_strchr(not_wall, info->map \
+	[(int)(position->pos_x + position->dir_x * MOVE_SPEED +0.01)] \
+	[(int)position->pos_y]))
+		position->pos_x += position->dir_x * MOVE_SPEED;
+	if (ft_strchr(not_wall, info->map \
+	[(int)position->pos_x] \
+	[(int)(position->pos_y + position->dir_y * MOVE_SPEED +0.01)]))
+		position->pos_y += position->dir_y * MOVE_SPEED;
+}
+
+void	move_backward(void)
+{
+	const char	not_wall[5] = "0NEWS";
+	t_position	*position;
+	t_info		*info;
+
+	position = get_position();
+	info = get_info();
+	if (ft_strchr(not_wall, info->map \
+	[(int)(position->pos_x - position->dir_x * MOVE_SPEED -0.01)] \
+	[(int)position->pos_y]))
+		position->pos_x -= position->dir_x * MOVE_SPEED;
+	if (ft_strchr(not_wall, info->map \
+	[(int)position->pos_x] \
+	[(int)(position->pos_y - position->dir_y * MOVE_SPEED -0.01)]))
+		position->pos_y -= position->dir_y * MOVE_SPEED;
+}
+
+void	move_left(void)
+{
+	const char	not_wall[5] = "0NEWS";
+	t_position	*position;
+	t_info		*info;
+
+	position = get_position();
+	info = get_info();
+	if (ft_strchr(not_wall, info->map \
+	[(int)(position->pos_x - position->dir_y * MOVE_SPEED -0.01)] \
+	[(int)position->pos_y]))
+		position->pos_x -= position->dir_y * MOVE_SPEED;
+	if (ft_strchr(not_wall, info->map \
+	[(int)position->pos_x] \
+	[(int)(position->pos_y + position->dir_x * MOVE_SPEED +0.01)]))
+		position->pos_y += position->dir_x * MOVE_SPEED;
+}
+
+void	move_right(void)
+{
+	const char	not_wall[5] = "0NEWS";
+	t_position	*position;
+	t_info		*info;
+
+	position = get_position();
+	info = get_info();
+	if (ft_strchr(not_wall, info->map \
+	[(int)(position->pos_x + position->dir_y * MOVE_SPEED +0.01)] \
+	[(int)position->pos_y]))
+		position->pos_x += position->dir_y * MOVE_SPEED;
+	if (ft_strchr(not_wall, info->map \
+	[(int)position->pos_x] \
+	[(int)(position->pos_y - position->dir_x * MOVE_SPEED -0.01)]))
+		position->pos_y -= position->dir_x * MOVE_SPEED;
+}
+
+void	rotate_left(void)
+{
+	t_position	*position = get_position();
+	double		old_dir_x;
+	double		old_plane_x;
+
+	old_dir_x = position->dir_x;
+	position->dir_x = position->dir_x * cos(-ROT_SPEED) - position->dir_y * sin(-ROT_SPEED);
+	position->dir_y = old_dir_x * sin(-ROT_SPEED) + position->dir_y * cos(-ROT_SPEED);
+	old_plane_x = position->plane_x;
+	position->plane_x = position->plane_x * cos(-ROT_SPEED) - position->plane_y * sin(-ROT_SPEED);
+	position->plane_y = old_plane_x * sin(-ROT_SPEED) + position->plane_y * cos(-ROT_SPEED);
+}
+
+void	rotate_right(void)
+{
+	t_position	*position = get_position();
+	double		old_dir_x;
+	double		old_plane_x;
+
+	old_dir_x = position->dir_x;
+	position->dir_x = position->dir_x * cos(ROT_SPEED) - position->dir_y * sin(ROT_SPEED);
+	position->dir_y = old_dir_x * sin(ROT_SPEED) + position->dir_y * cos(ROT_SPEED);
+	old_plane_x = position->plane_x;
+	position->plane_x = position->plane_x * cos(ROT_SPEED) - position->plane_y * sin(ROT_SPEED);
+	position->plane_y = old_plane_x * sin(ROT_SPEED) + position->plane_y * cos(ROT_SPEED);
+}
+
+int	key_press(int keycode)
+{
+	if (keycode == KEY_ESC)
+		exit(0);
+	if (keycode == KEY_W)
+		move_forward();
+	if (keycode == KEY_S)
+		move_backward();
+	if (keycode == KEY_A)
+		move_left();
+	if (keycode == KEY_D)
+		move_right();
+	if (keycode == KEY_LEFT)
+		rotate_left();
+	if (keycode == KEY_RIGHT)
+		rotate_right();
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	parser(argc, argv);
@@ -203,6 +320,7 @@ int	main(int argc, char **argv)
 	get_position_from_info();
 	init_canvas();
 	mlx_loop_hook(get_mlx()->mlx, &main_loop, 0);
+	mlx_hook(get_mlx()->win, X_EVENT_KEY_PRESS, 0, &key_press, 0);
 	mlx_loop(get_mlx()->mlx);
 	test_printf("test");
 	test_print_info();
