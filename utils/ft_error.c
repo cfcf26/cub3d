@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:37:44 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/16 18:54:51 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 02:01:25 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_error(char *str)
 {
-	perror(str);
+	write(2, str, ft_strlen(str));
+	write(2, "\n", 1);
 	exit(EXIT_FAILURE);
 }

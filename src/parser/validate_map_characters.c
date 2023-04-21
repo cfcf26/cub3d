@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:41:45 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:33:56 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 02:55:14 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	validate_map_characters(int fd)
 
 	line = pass_newline(fd);
 	if (!line)
-		ft_error("Error : Map is empty (1)\n");
+		parse_error("Error : Map is empty (1)");
 	player_count = 0;
 	while (line)
 	{
@@ -28,7 +28,7 @@ void	validate_map_characters(int fd)
 		while (line[++i])
 		{
 			if (!(ft_strchr(VALID_MAP_CHAR, line[i])) && player_count > 1)
-				ft_error("Error : Too many players (1)\n");
+				parse_error("Error : Too many players (1)");
 			if (line[i] == 'N' || line[i] == 'S' \
 			|| line[i] == 'E' || line[i] == 'W')
 				player_count++;
@@ -37,6 +37,6 @@ void	validate_map_characters(int fd)
 		line = exit_on_get_next_line_failure(fd);
 	}
 	if (player_count != 1)
-		ft_error("Error : No player (1)\n");
+		parse_error("Error : No player (1)");
 	free(line);
 }

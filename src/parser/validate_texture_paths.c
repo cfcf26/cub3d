@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:52:30 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:34:01 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 02:54:49 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	validate_texture_file(char *line)
 	validate_file_extension(line, ".xpm");
 	open_f = open(line, O_RDONLY);
 	if (open_f == -1)
-		ft_error("Error : Texture file open failed (1)\n");
+		parse_error("Error : Texture file open failed (1)");
 	close(open_f);
 }
 
@@ -43,7 +43,7 @@ void	validate_texture_paths(int fd)
 		else if (line && line[0] == 'E' && line[1] == 'A' && !(flag & 8))
 			flag |= 8;
 		else
-			ft_error("Error : Wrong texture path (1)\n");
+			parse_error("Error : Wrong texture path (1)");
 		validate_texture_file(line + 3);
 		free(line);
 		line = exit_on_get_next_line_failure(fd);

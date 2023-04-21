@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 01:58:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/16 18:46:00 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 02:55:05 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	check_wall_validity(char **map, int x, int y)
 {
 	if (map[x][y] == '\0' || map[x][y] == ' ' || map[x][y] == '\n')
-		ft_error("Error : Map is not surrounded by walls (1)\n");
+		parse_error("Error : Map is not surrounded by walls (1)");
 }
 
 void	validate_map_walls(void)

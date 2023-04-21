@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:52:05 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 02:43:22 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # define VALID_MAP_CHAR "012NSEW "
 # define VALID_PLAYER_CHAR "NSEW"
 # define NOT_WALL "0NEWS"
-
 
 typedef struct s_info
 {

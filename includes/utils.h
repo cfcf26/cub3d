@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:08:07 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/20 20:13:12 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 02:56:59 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void		test_print_info(void);
 # endif
 
 void		ft_error(char *str);
+void		parse_error(const char *err_msg);
 void		*exit_on_malloc_failure(size_t s);
 void		*exit_on_calloc_failure(size_t nmemb, size_t size);
 char		*exit_on_get_next_line_failure(int fd);

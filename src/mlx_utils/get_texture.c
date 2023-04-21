@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:08:12 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:09:03 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 02:56:13 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	get_data_addr(t_img *texture, void *img)
 static void	check_image(t_img *texture, void *img)
 {
 	if (texture->width != TILE_SIZE || texture->height != TILE_SIZE)
-		ft_error("Error : Mlx texture size is not 64x64 (1)");
+		parse_error("Error : Mlx texture size is not 64x64 (1)");
 	if (img == NULL)
 		ft_error("Error : Mlx texture init failed (1)");
 }
