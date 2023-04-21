@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:52:30 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/16 18:46:00 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:34:01 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	validate_texture_paths(int fd)
 			ft_error("Error : Wrong texture path (1)\n");
 		validate_texture_file(line + 3);
 		free(line);
-		line = get_next_line(fd);
+		line = exit_on_get_next_line_failure(fd);
 	}
 	free(line);
 }

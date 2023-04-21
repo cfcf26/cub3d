@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:31:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 02:07:13 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:30:18 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,26 @@ static void	get_plane(t_position *position, char dir)
 	}
 }
 
+static void	get_player_char(char **map)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (map[++i])
+	{
+		j = -1;
+		while (map[i][++j])
+		{
+			if (ft_strchr("NSEW", map[i][j]) != NULL)
+			{
+				get_position()->player_char = map[i][j];
+				return ;
+			}
+		}
+	}
+}
+
 void	get_position_from_info(void)
 {
 	t_position		*position;
@@ -92,4 +112,5 @@ void	get_position_from_info(void)
 	dir = get_pos(position, info);
 	get_dir(position, dir);
 	get_plane(position, dir);
+	get_player_char(info->map);
 }

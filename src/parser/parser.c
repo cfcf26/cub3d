@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:35:08 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 00:56:13 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:27:47 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	get_player_char(char **map)
 		{
 			if (ft_strchr("NSEW", map[i][j]) != NULL)
 			{
-				get_info()->player_char = map[i][j];
+				get_position()->player_char = map[i][j];
 				return ;
 			}
 		}
@@ -54,7 +54,6 @@ static void	get_info_from_file(char *file_name)
 	get_texture_paths(fd);
 	get_floor_ceiling_color(fd);
 	get_map(fd);
-	get_player_char(get_info()->map);
 	close(fd);
 }
 
@@ -62,5 +61,6 @@ void	parser(int ac, char **av)
 {
 	validate_file_contents(ac, av);
 	get_info_from_file(av[1]);
+	get_player_char(get_info()->map);
 	validate_map_walls();
 }

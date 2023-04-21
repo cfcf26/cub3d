@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 00:21:24 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:52:05 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # define TILE_SIZE 64
 # define VALID_MAP_CHAR "012NSEW "
 # define VALID_PLAYER_CHAR "NSEW"
-# define MOVE_SPEED 0.5
-# define ROT_SPEED 0.05
+# define NOT_WALL "0NEWS"
+
 
 typedef struct s_info
 {
@@ -32,7 +32,6 @@ typedef struct s_info
 	int		height;
 	int		*width;
 	char	**map;
-	char	player_char;
 }	t_info;
 typedef struct s_img
 {
@@ -46,6 +45,7 @@ typedef struct s_img
 }	t_img;
 typedef struct s_position
 {
+	char	player_char;
 	double	pos_x;
 	double	pos_y;
 	double	dir_x;

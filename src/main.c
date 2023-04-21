@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:30:45 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:37:49 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:26:40 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ static int	main_loop(void)
 int	main(int argc, char **argv)
 {
 	parser(argc, argv);
-	init_mlx_struct();
 	get_position_from_info();
+	init_mlx_struct();
 	mlx_loop_hook(get_mlx()->mlx, &main_loop, 0);
 	mlx_hook(get_mlx()->win, X_EVENT_KEY_PRESS, 0, &key_press, 0);
 	mlx_loop(get_mlx()->mlx);

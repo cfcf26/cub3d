@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:41:45 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/16 18:46:00 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:33:56 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	validate_map_characters(int fd)
 				player_count++;
 		}
 		free(line);
-		line = get_next_line(fd);
+		line = exit_on_get_next_line_failure(fd);
 	}
 	if (player_count != 1)
 		ft_error("Error : No player (1)\n");

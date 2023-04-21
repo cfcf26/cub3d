@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 02:02:14 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 02:05:13 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:33:14 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	get_floor_ceiling_color(int fd)
 	char	*line_2;
 
 	line_1 = pass_newline(fd);
-	line_2 = get_next_line(fd);
+	line_2 = exit_on_get_next_line_failure(fd);
 	if (line_1[0] == 'F')
 		get_color(ft_split(line_1 + 2, ','), ft_split(line_2 + 2, ','));
 	else

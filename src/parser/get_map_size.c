@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 01:58:51 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 02:35:13 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:34:50 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	get_height(char *file_name)
 	while (line)
 	{
 		free(line);
-		line = get_next_line(fd);
+		line = exit_on_get_next_line_failure(fd);
 		if (!line || line[0] == '\n')
 			break ;
 		height++;
@@ -58,7 +58,7 @@ static int	*get_width(char *file_name, int height)
 	int			*width;
 	int			i;
 
-	width = ft_calloc(height, sizeof(int));
+	width = exit_on_calloc_failure(height, sizeof(int));
 	fd = open(file_name, O_RDONLY);
 	line = pass_before_map(fd);
 	i = -1;
@@ -66,7 +66,7 @@ static int	*get_width(char *file_name, int height)
 	{
 		width[i] = ft_strlen(line);
 		free(line);
-		line = get_next_line(fd);
+		line = exit_on_get_next_line_failure(fd);
 	}
 	free(line);
 	close(fd);

@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:54:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/16 18:46:00 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 01:33:47 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ void	validate_floor_ceiling_colors(int fd)
 			validate_color(line + 2);
 		}
 		free(line);
-		line = get_next_line(fd);
+		line = exit_on_get_next_line_failure(fd);
 	}
 }
