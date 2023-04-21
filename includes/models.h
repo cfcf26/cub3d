@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:25:16 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 00:21:24 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_info
 	int		height;
 	int		*width;
 	char	**map;
+	char	player_char;
 }	t_info;
 typedef struct s_img
 {

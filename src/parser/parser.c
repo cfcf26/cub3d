@@ -6,11 +6,31 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:35:08 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 02:19:36 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 00:56:13 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+
+static void	get_player_char(char **map)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (map[++i])
+	{
+		j = -1;
+		while (map[i][++j])
+		{
+			if (ft_strchr("NSEW", map[i][j]) != NULL)
+			{
+				get_info()->player_char = map[i][j];
+				return ;
+			}
+		}
+	}
+}
 
 static void	validate_file_contents(int ac, char **av)
 {
@@ -34,6 +54,7 @@ static void	get_info_from_file(char *file_name)
 	get_texture_paths(fd);
 	get_floor_ceiling_color(fd);
 	get_map(fd);
+	get_player_char(get_info()->map);
 	close(fd);
 }
 
