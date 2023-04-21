@@ -6,12 +6,13 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 02:43:22 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 03:17:49 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MODELS_H
 # define MODELS_H
+
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 # define TILE_SIZE 64
