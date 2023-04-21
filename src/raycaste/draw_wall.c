@@ -6,11 +6,11 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 03:54:47 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 03:57:31 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raycaste.h"
+#include "raycast.h"
 
 void	draw_wall(t_draw *draw, t_ray *ray, t_mlx *mlx, int x)
 {

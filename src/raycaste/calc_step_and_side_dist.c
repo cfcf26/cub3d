@@ -6,11 +6,11 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 03:58:03 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:01:35 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raycaste.h"
+#include "raycast.h"
 
 void	calc_step_and_side_dist(t_ray *ray, const t_position *position)
 {

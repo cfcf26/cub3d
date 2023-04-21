@@ -6,11 +6,11 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:41:17 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 03:48:25 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raycaste.h"
+#include "raycast.h"
 
 void	init_ray(t_ray *ray, const t_position *position, int x)
 {

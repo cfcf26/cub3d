@@ -6,11 +6,11 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:00:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:00:54 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raycaste.h"
+#include "raycast.h"
 
 void	calc_dda(t_ray *ray)
 {

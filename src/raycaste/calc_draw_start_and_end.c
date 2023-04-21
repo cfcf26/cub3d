@@ -6,11 +6,11 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:00:03 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:00:08 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "raycaste.h"
+#include "raycast.h"
 
 void	calc_draw_start_and_end(t_draw *draw, t_ray *ray)
 {
