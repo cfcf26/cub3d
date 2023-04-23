@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:14:33 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:50:09 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 16:04:54 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "utils.h"
 
 # define X_EVENT_KEY_PRESS	2
+# define X_EVENT_KEY_EXIT	17
 
 # define RED_BUTTON 17
 # define KEY_ESC 53
@@ -38,4 +39,5 @@ void	move_backward(void);
 void	move_left(void);
 void	move_right(void);
 
+int		exit_game(void);
 #endif

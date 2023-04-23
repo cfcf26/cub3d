@@ -6,11 +6,34 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:12:21 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:12:31 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 16:05:05 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_utils.h"
+
+void	draw_floor_ceiling(t_mlx *mlx, t_info *info)
+{
+	const int	floor_color = \
+	info->floor[0] << 16 | info->floor[1] << 8 | info->floor[2];
+	const int	ceiling_color = \
+	info->ceiling[0] << 16 | info->ceiling[1] << 8 | info->ceiling[2];
+	int			i;
+	int			j;
+
+	i = -1;
+	while (++i < WIN_HEIGHT)
+	{
+		j = -1;
+		while (++j < WIN_WIDTH)
+		{
+			if (i < WIN_HEIGHT / 2)
+				mlx->buf[i][j] = ceiling_color;
+			else
+				mlx->buf[i][j] = floor_color;
+		}
+	}
+}
 
 void	draw(t_mlx *mlx)
 {

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_utils.h                                        :+:      :+:    :+:   */
+/*   reset_buf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 17:16:14 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 16:13:31 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/23 16:03:38 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/23 16:04:08 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_UTILS_H
-# define MLX_UTILS_H
+#include "mlx_utils.h"
 
-# include "utils.h"
+void	reset_buf(t_mlx *mlx)
+{
+	int	i;
+	int	j;
 
-t_mlx	*init_graphics_context(void);
-void	get_texture(t_img *texture, char *path, void *mlx);
-void	draw(t_mlx *mlx);
-void	synchronize_direction(t_mlx *mlx, t_position *position);
-void	draw_floor_ceiling(t_mlx *mlx, t_info *info);
-void	reset_buf(t_mlx *mlx);
-#endif
+	i = -1;
+	while (++i < WIN_HEIGHT)
+	{
+		j = -1;
+		while (++j < WIN_WIDTH)
+			mlx->buf[i][j] = 0;
+	}
+}

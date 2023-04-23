@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_mlx_struct.c                                  :+:      :+:    :+:   */
+/*   init_graphics_context.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:10:15 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:28:22 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 16:14:27 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	init_buffer(t_mlx *mlx)
 	}
 }
 
-t_mlx	*init_mlx_struct(void)
+t_mlx	*init_graphics_context(void)
 {
 	const t_info	*info = get_info();
 	t_mlx			*mlx;

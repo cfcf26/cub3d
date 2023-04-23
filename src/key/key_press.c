@@ -6,11 +6,16 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:16:50 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:19:40 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 16:04:41 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "key.h"
+
+int	exit_game(void)
+{
+	exit(0);
+}
 
 int	key_press(int keycode)
 {
