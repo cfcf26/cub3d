@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:08:07 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 02:56:59 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 14:28:51 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@
 # include "../libft/libft.h" // libft
 # include "models.h" // models
 
-# ifdef DEBUG_MODE
+//# ifdef DEBUG_MODE
 
-void		test_printf(char *str);
-void		test_print_info(void);
-# endif
+//void		test_printf(char *str);
+//void		test_print_info(void);
+//# endif
 
-# ifndef DEBUG_MODE
+//# ifndef DEBUG_MODE
 
-void		test_printf(char *str);
-void		test_print_info(void);
-# endif
+//void		test_printf(char *str);
+//void		test_print_info(void);
+//# endif
 
 void		ft_error(char *str);
 void		parse_error(const char *err_msg);

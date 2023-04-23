@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:30:45 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 02:58:00 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 14:40:11 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,5 @@ int	main(int argc, char **argv)
 	mlx_loop_hook(get_mlx()->mlx, &main_loop, 0);
 	mlx_hook(get_mlx()->win, X_EVENT_KEY_PRESS, 0, &key_press, 0);
 	mlx_loop(get_mlx()->mlx);
-	test_printf("test");
-	test_print_info();
 	return (0);
 }

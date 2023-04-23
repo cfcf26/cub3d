@@ -6,11 +6,21 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:54:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 02:55:22 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 15:01:47 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+
+static void	free_color(char **color)
+{
+	int	i;
+
+	i = -1;
+	while (color[++i])
+		free(color[i]);
+	free(color);
+}
 
 static void	validate_color(char *line)
 {
@@ -26,10 +36,7 @@ static void	validate_color(char *line)
 	if (rgb[0] < 0 || rgb[0] > 255 || rgb[1] < 0 || rgb[1] > 255 \
 	|| rgb[2] < 0 || rgb[2] > 255)
 		parse_error("Error : Wrong floor or ceiling color (3)");
-	free(color[0]);
-	free(color[1]);
-	free(color[2]);
-	free(color);
+	free_color(color);
 }
 
 void	validate_floor_ceiling_colors(int fd)

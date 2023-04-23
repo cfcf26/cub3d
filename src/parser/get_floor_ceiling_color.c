@@ -6,30 +6,35 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 02:02:14 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:33:14 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/23 15:06:28 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
-static void	get_color(char **f_color, char **c_color)
+static void	free_split(char **split)
 {
 	int	i;
 
+	i = 0;
+	while (split[i])
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+static void	get_color(char **f_color, char **c_color)
+{
 	get_info()->floor[0] = ft_atoi(f_color[0]);
 	get_info()->floor[1] = ft_atoi(f_color[1]);
 	get_info()->floor[2] = ft_atoi(f_color[2]);
 	get_info()->ceiling[0] = ft_atoi(c_color[0]);
 	get_info()->ceiling[1] = ft_atoi(c_color[1]);
 	get_info()->ceiling[2] = ft_atoi(c_color[2]);
-	i = -1;
-	while (++i < 3)
-	{
-		free(f_color[i]);
-		free(c_color[i]);
-	}
-	free(f_color);
-	free(c_color);
+	free_split(f_color);
+	free_split(c_color);
 }
 
 void	get_floor_ceiling_color(int fd)
@@ -43,4 +48,6 @@ void	get_floor_ceiling_color(int fd)
 		get_color(ft_split(line_1 + 2, ','), ft_split(line_2 + 2, ','));
 	else
 		get_color(ft_split(line_2 + 2, ','), ft_split(line_1 + 2, ','));
+	free(line_1);
+	free(line_2);
 }
