@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 02:01:25 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 02:01:58 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/24 15:35:07 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	get_texture_paths(int fd)
 	while (++i < 4)
 	{
 		line = pass_newline(fd);
+		check_empty_line(line);
 		line[ft_strlen(line) - 1] = '\0';
 		if (line[0] == 'N')
 			get_info()->no = ft_strdup(line + 3);

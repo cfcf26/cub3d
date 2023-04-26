@@ -6,11 +6,23 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 02:03:13 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:33:40 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/24 15:32:13 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+
+static void	remove_newline(char *line)
+{
+	int	i;
+
+	i = -1;
+	while (line[++i])
+	{
+		if (line[i] == '\n')
+			line[i] = '\0';
+	}
+}
 
 void	get_map(int fd)
 {
@@ -23,8 +35,7 @@ void	get_map(int fd)
 	i = -1;
 	while (++i < get_info()->height)
 	{
-		if (line[get_info()->width[i] - 1] == '\n')
-			line[get_info()->width[i] - 1] = '\0';
+		remove_newline(line);
 		map[i] = line;
 		line = exit_on_get_next_line_failure(fd);
 	}

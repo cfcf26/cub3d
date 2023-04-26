@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:10:15 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 16:14:27 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/24 15:52:56 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ t_mlx	*init_graphics_context(void)
 	mlx = get_mlx();
 	mlx->mlx = mlx_init();
 	if (mlx->mlx == NULL)
-		ft_error("Error : Mlx init failed (1)");
+		ft_error(" Mlx init failed (1)");
 	mlx->win = mlx_new_window(mlx->mlx, WIN_WIDTH, WIN_HEIGHT, "Cub3D");
 	if (mlx->win == NULL)
-		ft_error("Error : Mlx window init failed (1)");
+		ft_error(" Mlx window init failed (1)");
 	get_texture(&mlx->texture[0], info->ea, mlx->mlx);
 	get_texture(&mlx->texture[1], info->we, mlx->mlx);
 	get_texture(&mlx->texture[2], info->no, mlx->mlx);

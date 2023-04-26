@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 21:39:48 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 03:17:49 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/24 15:31:35 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define WIN_WIDTH 800
 # define WIN_HEIGHT 600
 # define TILE_SIZE 64
-# define VALID_MAP_CHAR "012NSEW "
+# define VALID_MAP_CHAR "01NSEW \n"
 # define VALID_PLAYER_CHAR "NSEW"
 # define NOT_WALL "0NEWS"
 

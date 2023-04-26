@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:31:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 03:08:10 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/24 15:57:21 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static char	get_pos(t_position *position, const t_info *info)
 		{
 			if (ft_strchr("NSEW", info->map[i][j]) != NULL)
 			{
-				position->pos_y = j + 0.5;
-				position->pos_x = i + 0.5;
+				position->pos_y = j + 0.51;
+				position->pos_x = i + 0.51;
 				return (info->map[i][j]);
 			}
 		}

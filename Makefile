@@ -6,7 +6,7 @@
 #    By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/20 16:40:03 by ekwak             #+#    #+#              #
-#    Updated: 2023/04/23 15:46:52 by ekwak            ###   ########.fr        #
+#    Updated: 2023/04/24 15:30:24 by ekwak            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,14 +33,16 @@ SRCS = utils/exit_on_memory_failure.c \
        utils/test_print_info.c \
        utils/test_printf.c \
        utils/validate_file_extension.c \
+       utils/check_empty_line.c \
        src/key/key_press.c \
        src/key/move.c \
        src/key/rotate.c \
        src/main.c \
        src/mlx_utils/draw.c \
        src/mlx_utils/get_texture.c \
-       src/mlx_utils/init_mlx_struct.c \
+       src/mlx_utils/init_graphics_context.c \
        src/mlx_utils/synchronize_direction.c \
+       src/mlx_utils/reset_buf.c \
        src/parser/get_floor_ceiling_color.c \
        src/parser/get_map.c \
        src/parser/get_map_size.c \
@@ -90,6 +92,4 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(NAME)
-
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re debug

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pass_newline.c                                     :+:      :+:    :+:   */
+/*   check_empty_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:31:35 by ekwak            ###   ########.fr       */
+/*   Created: 2023/04/24 15:23:04 by ekwak             #+#    #+#             */
+/*   Updated: 2023/04/25 13:43:46 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-char	*pass_newline(int fd)
+void	check_empty_line(char *line)
 {
-	char	*line;
+	int	i;
 
-	line = exit_on_get_next_line_failure(fd);
-	while (line)
+	i = -1;
+	while (line[++i])
 	{
-		if (line[0] != '\n')
-			break ;
-		free(line);
-		line = exit_on_get_next_line_failure(fd);
+		if (ft_strchr("\n ", line[i]) == NULL)
+			return ;
 	}
-	if (errno == ENOMEM)
-		ft_error(" Memory allocation failed (1)");
-	return (line);
+	if (line[i] == '\0')
+		parse_error(" Map in this format is not supported.");
 }

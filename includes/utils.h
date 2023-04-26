@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:08:07 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 14:28:51 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/24 15:28:17 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h> // read, write, close
 # include <fcntl.h> // open
 # include <errno.h> // errno
+# include <stdbool.h> // bool
 # include "../minilibx_opengl_20191021/mlx.h" // mlx
 # include "../libft/libft.h" // libft
 # include "models.h" // models
@@ -37,6 +38,7 @@
 
 void		ft_error(char *str);
 void		parse_error(const char *err_msg);
+void		check_empty_line(char *line);
 void		*exit_on_malloc_failure(size_t s);
 void		*exit_on_calloc_failure(size_t nmemb, size_t size);
 char		*exit_on_get_next_line_failure(int fd);
