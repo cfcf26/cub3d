@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 01:22:08 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:23:18 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/26 19:37:56 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,8 @@ static void	flip_horizontal_image(t_img *img)
 	}
 }
 
-void	synchronize_direction(t_mlx *mlx, t_position *position)
+void	synchronize_direction(t_mlx *mlx)
 {
-	if (position->player_char == 'N' || position->player_char == 'S')
-	{
-		flip_horizontal_image(&mlx->texture[1]);
-		flip_horizontal_image(&mlx->texture[2]);
-	}
-	else if (position->player_char == 'W' || position->player_char == 'E')
-	{
-		flip_horizontal_image(&mlx->texture[0]);
-		flip_horizontal_image(&mlx->texture[3]);
-	}
+	flip_horizontal_image(&mlx->texture[1]);
+	flip_horizontal_image(&mlx->texture[2]);
 }

@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:16:14 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 16:13:31 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/26 19:37:53 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 t_mlx	*init_graphics_context(void);
 void	get_texture(t_img *texture, char *path, void *mlx);
 void	draw(t_mlx *mlx);
-void	synchronize_direction(t_mlx *mlx, t_position *position);
+void	synchronize_direction(t_mlx *mlx);
 void	draw_floor_ceiling(t_mlx *mlx, t_info *info);
 void	reset_buf(t_mlx *mlx);
 #endif

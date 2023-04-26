@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:14:33 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 16:04:54 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/26 19:27:24 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define KEY_D 2
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
-# define MOV 0.5
+# define MOV 0.49
 # define ROT_SPEED 0.05
 
 int		key_press(int keycode);

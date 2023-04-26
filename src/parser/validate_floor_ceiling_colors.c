@@ -6,7 +6,7 @@
 /*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:54:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:34:01 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/04/26 19:19:27 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,28 @@ static void	free_color(char **color)
 	free(color);
 }
 
+static void	comma_count(char *line)
+{
+	int	i;
+	int	count;
+
+	i = -1;
+	count = 0;
+	while (line[++i] && line[i] != '\n')
+	{
+		if (line[i] == ',')
+			count++;
+	}
+	if (count != 2)
+		parse_error(" Wrong floor or ceiling color (5)");
+}
+
 static void	validate_color(char *line)
 {
 	char	**color;
 	int		rgb[3];
 
+	comma_count(line);
 	color = ft_split(line, ',');
 	if (!color || !color[0] || !color[1] || !color[2])
 		parse_error(" Wrong floor or ceiling color (2)");
