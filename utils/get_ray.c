@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_ray.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 20:11:58 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/20 20:12:44 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:12:38 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief get ray
+ * 
+ * @details get ray
+ * 
+ * @return t_ray* 
+ */
 t_ray	*get_ray(void)
 {
 	static t_ray	ray;

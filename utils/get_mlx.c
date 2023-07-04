@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_mlx.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 01:13:46 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/17 17:20:46 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:12:30 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief get mlx
+ * 
+ * @details get mlx
+ * 
+ * @return t_mlx* 
+ */
 t_mlx	*get_mlx(void)
 {
 	static t_mlx	mlx;

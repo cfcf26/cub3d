@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   calc_dda.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:00:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 15:30:34 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:05:52 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycast.h"
 
+/**
+ * @brief update ray
+ * 
+ * @details update ray
+ * 
+ * @param ray 
+ */
 static void	update_ray(t_ray *ray)
 {
 	if (ray->side_dist_x < ray->side_dist_y)
@@ -28,6 +35,13 @@ static void	update_ray(t_ray *ray)
 	}
 }
 
+/**
+ * @brief check if ray hit wall
+ * 
+ * @details check if ray hit wall
+ * 
+ * @param ray 
+ */
 static void	check_hit(t_ray *ray)
 {
 	const t_info	*info = get_info();
@@ -43,6 +57,13 @@ static void	check_hit(t_ray *ray)
 		ray->hit = 1;
 }
 
+/**
+ * @brief calculate distance from player to wall
+ * 
+ * @details calculate distance from player to wall
+ * 
+ * @param ray 
+ */
 void	calc_dda(t_ray *ray)
 {
 	while (ray->hit == 0)

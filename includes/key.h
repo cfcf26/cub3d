@@ -3,13 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   key.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:14:33 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:27:24 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:14:58 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file key.h
+ * @brief key header file
+ * @details key header file
+ */
 #ifndef KEY_H
 # define KEY_H
 

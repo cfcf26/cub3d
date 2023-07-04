@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 22:35:08 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:20:55 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:08:21 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief validate file
+ * 
+ * @details validate file
+ * 
+ * @param ac 
+ * @param av 
+ */
 static void	validate_file_contents(int ac, char **av)
 {
 	int		fd;
@@ -24,6 +32,13 @@ static void	validate_file_contents(int ac, char **av)
 	close(fd);
 }
 
+/**
+ * @brief get info from file
+ * 
+ * @details get info from file
+ * 
+ * @param file_name 
+ */
 static void	get_info_from_file(char *file_name)
 {
 	int	fd;
@@ -37,6 +52,14 @@ static void	get_info_from_file(char *file_name)
 	close(fd);
 }
 
+/**
+ * @brief parse file
+ * 
+ * @details parse file
+ * 
+ * @param ac 
+ * @param av 
+ */
 void	parser(int ac, char **av)
 {
 	validate_file_contents(ac, av);

@@ -3,16 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   parse_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 02:09:51 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:26:33 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:12:45 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 #include "readme.h"
 
+/**
+ * @brief create README file
+ * 
+ * @details create README file
+ */
 static void	create_readme_file(void)
 {
 	int			fd;
@@ -25,6 +30,13 @@ static void	create_readme_file(void)
 	close(fd);
 }
 
+/**
+ * @brief print error message and exit
+ * 
+ * @details print error message and exit
+ * 
+ * @param err_msg 
+ */
 void	parse_error(const char *err_msg)
 {
 	write(2, "Error\n", 6);

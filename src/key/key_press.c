@@ -3,20 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   key_press.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:16:50 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 16:04:41 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:10:53 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "key.h"
 
+/**
+ * @brief exit game
+ * 
+ * @details exit game
+ * 
+ * @return int 
+ */
 int	exit_game(void)
 {
 	exit(0);
 }
 
+/**
+ * @brief key press
+ * 
+ * @details key press
+ * 
+ * @param keycode 
+ * @return int 
+ */
 int	key_press(int keycode)
 {
 	if (keycode == KEY_ESC)

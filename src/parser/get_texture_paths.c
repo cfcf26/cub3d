@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_texture_paths.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 02:01:25 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/24 15:35:07 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:08:09 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief get texture paths
+ * 
+ * @details get texture paths
+ * 
+ * @param fd 
+ */
 void	get_texture_paths(int fd)
 {
 	char	*line;

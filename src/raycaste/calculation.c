@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   calculation.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 03:47:22 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:42:23 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycast.h"
 
+/**
+ * @brief calculate
+ * 
+ * @details calculate raycast and draw wall on the screen
+ * 
+ */
 void	calculation(void)
 {
 	int					x;

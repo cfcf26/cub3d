@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 02:03:13 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/24 15:32:13 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:08:06 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief pass newline
+ * 
+ * @details pass newline
+ * 
+ * @param fd 
+ * @return char* 
+ */
 static void	remove_newline(char *line)
 {
 	int	i;
@@ -24,6 +32,13 @@ static void	remove_newline(char *line)
 	}
 }
 
+/**
+ * @brief get map
+ * 
+ * @details get map
+ * 
+ * @param fd 
+ */
 void	get_map(int fd)
 {
 	char	*line;

@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:17:42 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/21 04:19:39 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:09:28 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "key.h"
 
+/**
+ * @brief rotate left
+ * 
+ * @details rotate left
+ * 
+ */
 void	rotate_left(void)
 {
 	t_position	*position;
@@ -31,6 +37,12 @@ void	rotate_left(void)
 	old_plane_x * sin(-ROT_SPEED) + position->plane_y * cos(-ROT_SPEED);
 }
 
+/**
+ * @brief rotate right
+ * 
+ * @details rotate right
+ * 
+ */
 void	rotate_right(void)
 {
 	t_position	*position;

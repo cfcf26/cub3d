@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   validate_file_extension.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 01:46:12 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/24 15:52:56 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:14:25 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief validate file extension
+ * 
+ * @details validate file extension
+ * 
+ * @param file_name 
+ * @param extension 
+ */
 void	validate_file_extension(char *file_name, char *extension)
 {
 	const int	i = ft_strlen(file_name);

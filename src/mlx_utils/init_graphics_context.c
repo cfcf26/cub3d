@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   init_graphics_context.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:10:15 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:40:38 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:11:27 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_utils.h"
 
+/**
+ * @brief init canvas
+ * 
+ * @details init canvas
+ * 
+ */
 static void	init_canvas(void)
 {
 	t_mlx	*mlx;
@@ -23,6 +29,12 @@ static void	init_canvas(void)
 						&mlx->canvas.endian);
 }
 
+/**
+ * @brief init buffer
+ * 
+ * @details init buffer
+ * 
+ */
 static void	init_buffer(t_mlx *mlx)
 {
 	int	i;
@@ -37,6 +49,13 @@ static void	init_buffer(t_mlx *mlx)
 	}
 }
 
+/**
+ * @brief init graphics context
+ * 
+ * @details init graphics context
+ * 
+ * @return t_mlx* 
+ */
 t_mlx	*init_graphics_context(void)
 {
 	const t_info	*info = get_info();

@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   validate_floor_ceiling_colors.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:54:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:19:27 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:08:53 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief validate floor or ceiling color
+ * 
+ * @details validate floor or ceiling color
+ * 
+ * @param fd 
+ */
 static void	is_valid_color(char *color)
 {
 	int	i;
@@ -24,6 +31,13 @@ static void	is_valid_color(char *color)
 	}
 }
 
+/**
+ * @brief free color
+ * 
+ * @details free color
+ * 
+ * @param color 
+ */
 static void	free_color(char **color)
 {
 	int	i;
@@ -34,6 +48,13 @@ static void	free_color(char **color)
 	free(color);
 }
 
+/**
+ * @brief comma count
+ * 
+ * @details comma count
+ * 
+ * @param line 
+ */
 static void	comma_count(char *line)
 {
 	int	i;
@@ -50,6 +71,13 @@ static void	comma_count(char *line)
 		parse_error(" Wrong floor or ceiling color (5)");
 }
 
+/**
+ * @brief validate color
+ * 
+ * @details validate color
+ * 
+ * @param line 
+ */
 static void	validate_color(char *line)
 {
 	char	**color;
@@ -71,6 +99,13 @@ static void	validate_color(char *line)
 	free_color(color);
 }
 
+/**
+ * @brief validate floor/ceiling colors
+ * 
+ * @details validate floor/ceiling colors
+ * 
+ * @param fd 
+ */
 void	validate_floor_ceiling_colors(int fd)
 {
 	char	*line;

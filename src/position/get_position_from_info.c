@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_position_from_info.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:31:34 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:32:12 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:07:08 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "position.h"
 
+/**
+ * @brief get position from info
+ * 
+ * @details get position from info
+ * 
+ * @param info 
+ */
 static char	get_pos(t_position *position, const t_info *info)
 {
 	int	i;
@@ -34,6 +41,14 @@ static char	get_pos(t_position *position, const t_info *info)
 	return (0);
 }
 
+/**
+ * @brief get position
+ * 
+ * @details get position
+ * 
+ * @param position 
+ * @param info 
+ */
 static void	get_dir(t_position *position, char dir)
 {
 	if (dir == 'N')
@@ -58,6 +73,14 @@ static void	get_dir(t_position *position, char dir)
 	}
 }
 
+/**
+ * @brief get plane
+ * 
+ * @details get plane
+ * 
+ * @param position 
+ * @param dir 
+ */
 static void	get_plane(t_position *position, char dir)
 {
 	if (dir == 'N')
@@ -82,6 +105,13 @@ static void	get_plane(t_position *position, char dir)
 	}
 }
 
+/**
+ * @brief get player char
+ * 
+ * @details get player char
+ * 
+ * @param map 
+ */
 static void	get_player_char(char **map)
 {
 	int	i;
@@ -102,6 +132,12 @@ static void	get_player_char(char **map)
 	}
 }
 
+/**
+ * @brief get position from info
+ * 
+ * @details get position from info
+ * 
+ */
 void	get_position_from_info(void)
 {
 	t_position		*position;

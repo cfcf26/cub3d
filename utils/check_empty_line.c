@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   check_empty_line.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 15:23:04 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:43:46 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:11:53 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief check empty line
+ * 
+ * @details check empty line
+ * 
+ * @param line 
+ */
 void	check_empty_line(char *line)
 {
 	int	i;

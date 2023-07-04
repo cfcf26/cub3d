@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   calc_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 03:58:47 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:06:12 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycast.h"
 
+/**
+ * @brief calculate texture
+ * 
+ * @details calculate texture
+ * 
+ * @param draw 
+ * @param ray 
+ */
 void	calc_texture(t_draw *draw, t_ray *ray)
 {
 	double		wall_x;

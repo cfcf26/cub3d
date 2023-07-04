@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   pass_newline.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:53:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:31:35 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:12:49 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief pass newline
+ * 
+ * @details pass newline
+ * 
+ * @param fd 
+ * @return char* 
+ */
 char	*pass_newline(int fd)
 {
 	char	*line;

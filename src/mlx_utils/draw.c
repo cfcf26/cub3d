@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:12:21 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/23 16:05:05 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:11:05 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_utils.h"
 
+/**
+ * @brief draw floor and ceiling
+ * 
+ * @details draw floor and ceiling
+ * 
+ * @param mlx 
+ * @param info 
+ */
 void	draw_floor_ceiling(t_mlx *mlx, t_info *info)
 {
 	const int	floor_color = \
@@ -35,6 +43,13 @@ void	draw_floor_ceiling(t_mlx *mlx, t_info *info)
 	}
 }
 
+/**
+ * @brief draw
+ * 
+ * @details draw
+ * 
+ * @param mlx 
+ */
 void	draw(t_mlx *mlx)
 {
 	int	x;

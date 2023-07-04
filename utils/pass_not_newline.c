@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   pass_not_newline.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 01:59:08 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/24 15:52:56 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:13:57 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief pass not newline
+ * 
+ * @details this function is used to pass the lines until the first newline
+ * @param fd 
+ * @return char* 
+ */
 char	*pass_not_newline(int fd)
 {
 	char	*line;

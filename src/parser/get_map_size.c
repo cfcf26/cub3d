@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_map_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 01:58:51 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 01:34:50 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:07:57 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief pass newline
+ * 
+ * @details pass newline
+ * 
+ * @param fd 
+ * @return char* 
+ */
 static char	*pass_before_map(int fd)
 {
 	char	*line;
@@ -28,6 +36,14 @@ static char	*pass_before_map(int fd)
 	return (line);
 }
 
+/**
+ * @brief get height
+ * 
+ * @details get height
+ * 
+ * @param file_name 
+ * @return int 
+ */
 static int	get_height(char *file_name)
 {
 	int		fd;
@@ -51,6 +67,15 @@ static int	get_height(char *file_name)
 	return (height);
 }
 
+/**
+ * @brief get width
+ * 
+ * @details get width
+ * 
+ * @param file_name 
+ * @param height 
+ * @return int* 
+ */
 static int	*get_width(char *file_name, int height)
 {
 	int			fd;
@@ -73,6 +98,13 @@ static int	*get_width(char *file_name, int height)
 	return (width);
 }
 
+/**
+ * @brief get map size
+ * 
+ * @details get map size
+ * 
+ * @param file_name 
+ */
 void	get_map_size(char *file_name)
 {
 	int	height;

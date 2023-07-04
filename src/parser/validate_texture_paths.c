@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   validate_texture_paths.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:52:30 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:35:30 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:09:20 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief validate texture file
+ * 
+ * @details validate texture file
+ * 
+ * @param line 
+ */
 static void	validate_texture_file(char *line)
 {
 	int			open_f;
@@ -25,6 +32,13 @@ static void	validate_texture_file(char *line)
 	close(open_f);
 }
 
+/**
+ * @brief validate texture paths
+ * 
+ * @details validate texture paths
+ * 
+ * @param fd 
+ */
 void	validate_texture_paths(int fd)
 {
 	int		flag;

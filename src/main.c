@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:30:45 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/24 16:09:55 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:05:55 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file main.c
+ * @brief main function
+ * @details main function
+ */
 #include "cub3d.h"
 
+/**
+ * @brief main loop
+ * 
+ * @details main loop
+ * 
+ * @return int 
+ */
 static int	main_loop(void)
 {
 	draw_floor_ceiling(get_mlx(), get_info());
@@ -21,6 +33,12 @@ static int	main_loop(void)
 	return (0);
 }
 
+/**
+ * @brief routines
+ * 
+ * @details set routines
+ * 
+ */
 static void	routines(void)
 {
 	void	*mlx;
@@ -34,12 +52,25 @@ static void	routines(void)
 	mlx_loop(mlx);
 }
 
+/**
+ * @brief setup
+ * 
+ * @details get position from info, init graphics context
+ * 
+ */
 static void	setup(void)
 {
 	get_position_from_info();
 	init_graphics_context();
 }
 
+/**
+ * @brief main function
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int	main(int argc, char **argv)
 {
 	parser(argc, argv);

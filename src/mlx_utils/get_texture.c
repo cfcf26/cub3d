@@ -3,15 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_texture.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:08:12 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/24 15:52:56 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:11:16 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_utils.h"
 
+/**
+ * @brief get data address
+ * 
+ * @details get data address
+ * 
+ * @param texture 
+ * @param img 
+ */
 static void	get_data_addr(t_img *texture, void *img)
 {
 	int	*data;
@@ -27,6 +35,14 @@ static void	get_data_addr(t_img *texture, void *img)
 		texture->data[i] = data[i];
 }
 
+/**
+ * @brief check image
+ * 
+ * @details check image
+ * 
+ * @param texture 
+ * @param img 
+ */
 static void	check_image(t_img *texture, void *img)
 {
 	if (texture->width != TILE_SIZE || texture->height != TILE_SIZE)
@@ -35,6 +51,15 @@ static void	check_image(t_img *texture, void *img)
 		ft_error(" Mlx texture init failed (1)");
 }
 
+/**
+ * @brief get texture
+ * 
+ * @details get texture
+ * 
+ * @param texture 
+ * @param path 
+ * @param mlx 
+ */
 void	get_texture(t_img *texture, char *path, void *mlx)
 {
 	void	*img;

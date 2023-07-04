@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 21:37:44 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/24 15:53:16 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:12:21 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief print error message and exit
+ * 
+ * @details print error message and exit
+ * 
+ * @param str 
+ */
 void	ft_error(char *str)
 {
 	write(2, "Error\n", 6);

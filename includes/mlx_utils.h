@@ -3,13 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_utils.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:16:14 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:37:53 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:17:10 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file mlx_utils.h
+ * @brief mlx utils header file
+ * @details mlx utils header file
+ */
 #ifndef MLX_UTILS_H
 # define MLX_UTILS_H
 

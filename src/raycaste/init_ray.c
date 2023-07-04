@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   init_ray.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:41:17 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/22 03:07:30 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:06:35 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "raycast.h"
 
+/**
+ * @brief initialize ray
+ * 
+ * @details initialize ray
+ * 
+ * @param ray 
+ * @param position 
+ * @param x 
+ */
 void	init_ray(t_ray *ray, const t_position *position, int x)
 {
 	ray->camera_x = 2 * x / (double)WIN_WIDTH - 1;

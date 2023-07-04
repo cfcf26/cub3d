@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   synchronize_direction.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 01:22:08 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:37:56 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:11:41 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx_utils.h"
 
+/**
+ * @brief flip horizontal image
+ * 
+ * @details flip horizontal image
+ * 
+ * @param img 
+ */
 static void	flip_horizontal_image(t_img *img)
 {
 	int		i;
@@ -34,6 +41,13 @@ static void	flip_horizontal_image(t_img *img)
 	}
 }
 
+/**
+ * @brief synchronize direction
+ * 
+ * @details synchronize direction
+ * 
+ * @param mlx 
+ */
 void	synchronize_direction(t_mlx *mlx)
 {
 	flip_horizontal_image(&mlx->texture[1]);

@@ -3,15 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   validate_map_walls.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 01:58:26 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:37:56 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:09:12 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief check wall validity
+ * 
+ * @details check wall validity
+ * 
+ * @param map 
+ * @param x 
+ * @param y 
+ */
 static void	check_wall_validity(char **map, int x, int y)
 {
 	int	*width;
@@ -25,6 +34,12 @@ static void	check_wall_validity(char **map, int x, int y)
 		parse_error(" Map is not surrounded by walls (1)");
 }
 
+/**
+ * @brief validate map walls
+ * 
+ * @details validate map walls
+ * 
+ */
 void	validate_map_walls(void)
 {
 	const char	not_wall[5] = "0NEWS";

@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   get_floor_ceiling_color.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 02:02:14 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/25 13:17:49 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:07:36 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 
+/**
+ * @brief free split
+ * 
+ * @details free split
+ * 
+ * @param split 
+ */
 static void	free_split(char **split)
 {
 	int	i;
@@ -25,6 +32,14 @@ static void	free_split(char **split)
 	free(split);
 }
 
+/**
+ * @brief get color
+ * 
+ * @details get color
+ * 
+ * @param f_color 
+ * @param c_color 
+ */
 static void	get_color(char **f_color, char **c_color)
 {
 	if (f_color[0][0] == ' ' || c_color[0][0] == ' ')
@@ -39,6 +54,13 @@ static void	get_color(char **f_color, char **c_color)
 	free_split(c_color);
 }
 
+/**
+ * @brief get floor/ceiling color
+ * 
+ * @details get floor/ceiling color
+ * 
+ * @param fd 
+ */
 void	get_floor_ceiling_color(int fd)
 {
 	char	*line_1;

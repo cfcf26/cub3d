@@ -3,13 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:14:21 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/26 19:24:06 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:42:23 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/**
+ * @file move.c
+ * @author ekwak <ekwak@student.42seoul.kr>
+ * @brief 
+ * @version 0.1
+ * @date 2023-07-04
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include "key.h"
 
 void	move_forward(void)

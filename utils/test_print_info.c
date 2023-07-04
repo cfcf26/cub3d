@@ -3,15 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   test_print_info.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekwak <ekwak@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: ekwak <student.42seoul.kr>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 01:59:17 by ekwak             #+#    #+#             */
-/*   Updated: 2023/04/13 01:59:27 by ekwak            ###   ########.fr       */
+/*   Updated: 2023/07/04 12:14:02 by ekwak            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
+/**
+ * @brief test print info
+ * 
+ * @details test print info
+ * 
+ * @return void
+ */
 #ifdef DEBUG_MODE
 
 void	test_print_info(void)
